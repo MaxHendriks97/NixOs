@@ -13,12 +13,16 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    hardware.url = "github:nixos/nixos-hardware";
+    emacs.url = "github:nix-community/emacs-overlay";
+
+    neovim.url = "github:nix-community/neovim-nightly-overlay";
+
+    hardware.url = "github:NixOs/nixos-hardware/master";
 
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, hardware, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, emacs, neovim, hardware, nix-colors, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [

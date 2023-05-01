@@ -9,7 +9,7 @@
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
+    inputs.hardware.nixosModules.framework-12th-gen-intel
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -58,13 +58,103 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
     };
-  };
 
-  networking.hostName = "D-135";
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  networking.hostName = "D-135";
+  networking.networkmanager.enable = true;
+
+  # select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "nl_NL.UTF-8";
+    LC_IDENTIFICATION = "nl_NL.UTF-8";
+    LC_MEASUREMENT = "nl_NL.UTF-8";
+    LC_MONETARY = "nl_NL.UTF-8";
+    LC_NAME = "nl_NL.UTF-8";
+    LC_NUMERIC = "nl_NL.UTF-8";
+    LC_PAPER = "nl_NL.UTF-8";
+    LC_TELEPHONE = "nl_NL.UTF-8";
+    LC_TIME = "nl_NL.UTF-8";
+  };
+
+  time.timeZone = "Europe/Amsterdam";
+
+  services.xserver.enable = true;
+
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+
+  services.xserver = {
+    layout = "us";
+    xkbVariant = "";
+  };
+
+  # Enable CUPS to print documents
+  services.printing.enable = true;
+
+  services.emacs.package = pkgs.emacsNativeComp;
+  services.emacs.enable = true;
+
+  services.nscd.enableNsncd = true;
+
+  # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
+
+  services.fwupd.enable = true;
+
+  virtualisation.docker.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "docker" "docker-compose" "npm" ];
+      theme = "";
+    };
+  };
+
+  users.defaultUserShell = pkgs.zsh;
+
+  fonts = {
+    fonts = with pkgs; [
+      nerdfonts
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Iosevka" ];
+      };
+    };
+  };
 
   users.users = {
     maxh = {
@@ -73,9 +163,60 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    (neovim.override {
+      vimAlias = true;
+      configure = {
+        packages.myPlugins = with pkgs.vimPlugins; {
+          start = [ vim-nix ];
+          opt = [];
+        };
+        customRc = ''
+          set nocompatible
+          set syntax on
+        '';
+      };
+    })
+    # Doom emacs dependencies
+    binutils
+    ripgrep
+    coreutils
+    fd
+    imagemagick
+    clang
+    pandoc
+    shellcheck
+    xorg.xwininfo
+    xdotool
+    xclip
+    jdt-language-server
+    html-tidy
+    nodePackages.stylelint
+    nodePackages.js-beautify
+    tdlib
+    ((emacsPackagesFor emacsNativeComp).emacsWithPackages (epkgs: [ epkgs.vterm epkgs.tree-sitter ]))
+
+    # Dev tools
+    gnumake
+    cmake
+    git
+    jdk11
+    nodejs-19_x
+    nixfmt
+    docker-compose
+    beekeeper-studio
+    unzip
+    python3
+
+    # User programs
+    firefox
+    slack
+    _1password-gui
+  ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
