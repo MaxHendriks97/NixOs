@@ -2,27 +2,17 @@
   description = "Your new nix config";
 
   inputs = {
-    # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    # You can access packages and modules from different nixpkgs revs
-    # at the same time. Here's an working example:
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
-
-    # Home manager
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
     emacs.url = "github:nix-community/emacs-overlay";
-
     neovim.url = "github:nix-community/neovim-nightly-overlay";
-
     hardware.url = "github:NixOs/nixos-hardware/master";
-
     nix-colors.url = "github:misterio77/nix-colors";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, emacs, neovim, hardware, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, emacs, neovim, hardware, nix-colors, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -64,6 +54,8 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
+            hyprland.nixosModules.default
+            {programs.hyprland.enable = true;}
           ];
         };
       };
@@ -77,6 +69,8 @@
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home.nix
+            hyprland.nixosModules.default
+            {wayland.windowManager.hyprland.enable = true;}
           ];
         };
       };

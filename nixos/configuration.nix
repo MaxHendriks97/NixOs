@@ -25,6 +25,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      inputs.emacs.overlay
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -93,9 +94,6 @@
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
   services.xserver = {
     layout = "us";
     xkbVariant = "";
@@ -104,15 +102,13 @@
   # Enable CUPS to print documents
   services.printing.enable = true;
 
-  services.emacs.package = pkgs.emacsNativeComp;
-  services.emacs.enable = true;
-
   services.nscd.enableNsncd = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -146,7 +142,18 @@
 
   fonts = {
     fonts = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      noto-fonts-extra
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
       nerdfonts
+      iosevka
     ];
 
     fontconfig = {
@@ -181,6 +188,18 @@
         '';
       };
     })
+    # Hyprland
+    kitty
+    mako
+    xdg-desktop-portal-hyprland
+    pipewire
+    wireplumber
+    libsForQt5.qt5.qtwayland
+    qt6.qtwayland
+    waybar
+    rofi-wayland
+    phinger-cursors
+
     # Doom emacs dependencies
     binutils
     ripgrep
@@ -193,41 +212,53 @@
     xorg.xwininfo
     xdotool
     xclip
-    jdt-language-server
     html-tidy
     nodePackages.stylelint
     nodePackages.js-beautify
-    tdlib
-    ((emacsPackagesFor emacsNativeComp).emacsWithPackages (epkgs: [ epkgs.vterm epkgs.tree-sitter ]))
+
+    # tdlib
+    gnupg
+    mu
+    isync
+    ((emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]))
 
     # Dev tools
     gnumake
     cmake
     git
     jdk11
-    nodejs-19_x
+    nodejs
     nixfmt
     docker-compose
     beekeeper-studio
     unzip
-    python3
+    (pkgs.python3.withPackages(ps: with ps; [ pip ]))
 
     # User programs
     firefox
     slack
     _1password-gui
+    htop
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
-    # Forbid root login through SSH.
-    permitRootLogin = "no";
-    # Use keys only. Remove if you want to SSH using password (not recommended)
-    passwordAuthentication = false;
+    settings = {
+      # Forbid root login through SSH.
+      PermitRootLogin = "no";
+      # Use keys only. Remove if you want to SSH using password (not recommended)
+      PasswordAuthentication = false;
+    };
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "/home/maxh/nixos-config#D-135";
+    flags = [ "--recreate-lock-file" ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 }
