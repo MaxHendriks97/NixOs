@@ -269,6 +269,7 @@
     htop
     neofetch
     qgis-ltr
+    spotify
   ];
 
   programs.thunar = {
