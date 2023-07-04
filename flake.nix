@@ -2,7 +2,7 @@
   description = "Your new nix config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     emacs.url = "github:nix-community/emacs-overlay";
@@ -55,7 +55,11 @@
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
             hyprland.nixosModules.default
-            {programs.hyprland.enable = true;}
+            {
+              programs.hyprland.enable = true;
+              programs.hyprland.xwayland.enable = true;
+              programs.hyprland.xwayland.hidpi = true;
+            }
           ];
         };
       };
@@ -69,8 +73,6 @@
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home.nix
-            hyprland.nixosModules.default
-            {wayland.windowManager.hyprland.enable = true;}
           ];
         };
       };

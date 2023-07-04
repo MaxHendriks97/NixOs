@@ -36,6 +36,11 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      (self: super: {
+        waybar = super.waybar.overrideAttrs (oldAttrs: {
+          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+        });
+      })
     ];
     # Configure your nixpkgs instance
     config = {
@@ -92,13 +97,6 @@
 
   time.timeZone = "Europe/Amsterdam";
 
-  services.xserver.enable = true;
-
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents
   services.printing.enable = true;
 
@@ -107,13 +105,20 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  security.rtkit.enable = true;
+  security.polkit.enable = true;
+
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
   };
 
   hardware.bluetooth = {
@@ -126,6 +131,8 @@
   };
 
   services.fwupd.enable = true;
+
+  services.blueman.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -153,12 +160,12 @@
       dina-font
       proggyfonts
       nerdfonts
-      iosevka
+      font-awesome
     ];
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Iosevka" ];
+        monospace = [ "Iosevka Nerd Font" ];
       };
     };
   };
@@ -170,8 +177,13 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "networkmanager" "wheel" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
     };
+  };
+
+  qt = {
+    style = "adwaita";
+    platformTheme = "qt5ct";
   };
 
   environment.systemPackages = with pkgs; [
@@ -185,20 +197,36 @@
         customRc = ''
           set nocompatible
           set syntax on
+          set nu
         '';
       };
     })
     # Hyprland
-    kitty
-    mako
-    xdg-desktop-portal-hyprland
-    pipewire
-    wireplumber
-    libsForQt5.qt5.qtwayland
-    qt6.qtwayland
+    swaylock-effects swayidle wlogout swaybg # Login etc
     waybar
-    rofi-wayland
+    wayland-protocols
+    libsForQt5.qt5.qtwayland
+    libsForQt5.lightly
+    libsForQt5.qt5ct
+    qt6.qtwayland
+    gtk-engine-murrine
+    catppuccin-gtk
+    rofi-wayland mako rofimoji # Drawer + notifications
+    viewnior # Image viewer
+    pavucontrol # Audio controls
+    vlc
+    sway-contrib.grimshot
+    pamixer
+    brightnessctl
+    gtk3
+    kitty
     phinger-cursors
+    libnotify
+    poweralertd
+    dbus
+    catppuccin-kvantum
+    gnome.gnome-themes-extra
+    grim
 
     # Doom emacs dependencies
     binutils
@@ -239,7 +267,18 @@
     slack
     _1password-gui
     htop
+    neofetch
+    qgis-ltr
   ];
+
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-media-tags-plugin
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
