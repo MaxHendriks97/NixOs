@@ -137,7 +137,7 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-  }
+  };
 
   virtualisation.docker.enable = true;
 
