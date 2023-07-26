@@ -134,6 +134,11 @@
 
   services.blueman.enable = true;
 
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  }
+
   virtualisation.docker.enable = true;
 
   programs.zsh = {
@@ -227,6 +232,8 @@
     catppuccin-kvantum
     gnome.gnome-themes-extra
     grim
+    playerctl
+    swaylock-effects
 
     # Doom emacs dependencies
     binutils
@@ -270,6 +277,7 @@
     neofetch
     qgis-ltr
     spotify
+    nomacs
   ];
 
   programs.thunar = {

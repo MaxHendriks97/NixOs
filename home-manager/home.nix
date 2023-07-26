@@ -78,7 +78,7 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     TERMINL = "kitty";
-    EDITOR = "nvim";
+    EDITOR = "emacs";
     VISUAL = "emacs";
     QT_QPA_PLATFORM = "wayland-egl";
     QT_QPA_PLATFORMTHEME = "qt5ct";
@@ -103,6 +103,9 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+
+  home.packages = with pkgs; [
+  ];
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
