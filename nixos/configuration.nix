@@ -225,7 +225,6 @@
     brightnessctl
     gtk3
     kitty
-    phinger-cursors
     libnotify
     poweralertd
     dbus

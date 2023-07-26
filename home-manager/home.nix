@@ -75,6 +75,13 @@
     };
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors";
+    size = 25;
+  };
+
   home.sessionVariables = {
     BROWSER = "firefox";
     TERMINL = "kitty";
