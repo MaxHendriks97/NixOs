@@ -153,7 +153,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -277,6 +277,7 @@
     qgis-ltr
     spotify
     nomacs
+    gnome.file-roller
   ];
 
   programs.thunar = {
