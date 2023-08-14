@@ -1,23 +1,4 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-
 { inputs, outputs, lib, config, pkgs, ... }: {
-  # You can import other NixOS modules here
-  imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.framework-12th-gen-intel
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
-  ];
-
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -77,7 +58,6 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "D-135";
   networking.networkmanager.enable = true;
 
   # select internationalisation properties.
@@ -129,8 +109,6 @@
       };
     };
   };
-
-  services.fwupd.enable = true;
 
   services.blueman.enable = true;
 
@@ -185,6 +163,7 @@
       extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
     };
   };
+
 
   qt = {
     style = "adwaita";
@@ -299,12 +278,6 @@
       # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = false;
     };
-  };
-
-  system.autoUpgrade = {
-    enable = true;
-    flake = "/home/maxh/nixos-config#D-135";
-    flags = [ "--recreate-lock-file" ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

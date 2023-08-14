@@ -53,7 +53,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./nixos/D-135/configuration.nix
             hyprland.nixosModules.default
             {
               programs.hyprland.enable = true;
