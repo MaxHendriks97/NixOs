@@ -85,11 +85,19 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.opengl.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
   };
 
   security.rtkit.enable = true;
@@ -111,11 +119,6 @@
   };
 
   services.blueman.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-  };
 
   virtualisation.docker.enable = true;
 
@@ -256,6 +259,8 @@
     nomacs
     gnome.file-roller
   ];
+
+  programs.dconf.enable = true;
 
   programs.thunar = {
     enable = true;

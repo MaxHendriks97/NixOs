@@ -54,11 +54,6 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/D-135/configuration.nix
-            hyprland.nixosModules.default
-            {
-              programs.hyprland.enable = true;
-              programs.hyprland.xwayland.enable = true;
-            }
           ];
         };
       };
@@ -70,6 +65,8 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
           modules = [
+            hyprland.homeManagerModules.default
+
             # > Our main home-manager configuration file <
             ./home-manager/home.nix
           ];

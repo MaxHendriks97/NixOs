@@ -13,6 +13,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./waybar
+    ./hyprland.nix
   ];
 
   colorScheme = nix-colors.colorschemes.catppuccin-mocha;
