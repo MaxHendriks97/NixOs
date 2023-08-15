@@ -187,7 +187,6 @@
     })
     # Hyprland
     swaylock-effects swayidle wlogout swaybg # Login etc
-    waybar
     wayland-protocols
     libsForQt5.qt5.qtwayland
     libsForQt5.lightly
@@ -203,7 +202,6 @@
     pamixer
     brightnessctl
     gtk3
-    kitty
     libnotify
     poweralertd
     dbus

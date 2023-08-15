@@ -58,7 +58,6 @@
             {
               programs.hyprland.enable = true;
               programs.hyprland.xwayland.enable = true;
-              programs.hyprland.xwayland.hidpi = true;
             }
           ];
         };
@@ -69,7 +68,7 @@
       homeConfigurations = {
         "maxh@D-135" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home.nix

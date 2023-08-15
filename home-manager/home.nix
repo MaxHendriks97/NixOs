@@ -1,7 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -12,7 +12,10 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./waybar
   ];
+
+  colorScheme = nix-colors.colorschemes.catppuccin-mocha;
 
   nixpkgs = {
     # You can add overlays here
@@ -54,8 +57,13 @@
     enable = true;
     font.name = "Iosevka";
     theme = {
-      name = "Juno";
-      package = pkgs.juno-theme;
+      name = "Catppuccin-Mocha-Compact-Green-dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "green" ];
+        size = "compact";
+        tweaks = [ "rimless" ];
+        variant = "mocha";
+      };
     };
     iconTheme = {
       name = "Papirus";
@@ -108,8 +116,17 @@
   };
 
   # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs = {
+    home-manager.enable = true;
+    git.enable = true;
+    kitty = {
+      enable = true;
+      settings = {
+        background = "#${config.colorScheme.colors.base00}";
+        foreground = "#${config.colorScheme.colors.base05}";
+      };
+    };
+  };
 
   home.packages = with pkgs; [
   ];
