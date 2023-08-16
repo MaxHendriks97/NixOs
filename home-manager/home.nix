@@ -9,11 +9,13 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     inputs.nix-colors.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./waybar
     ./hyprland.nix
+    ./nixvim.nix
   ];
 
   colorScheme = nix-colors.colorschemes.catppuccin-mocha;
@@ -120,6 +122,7 @@
   programs = {
     home-manager.enable = true;
     git.enable = true;
+    lazygit.enable = true;
     kitty = {
       enable = true;
       settings = {
