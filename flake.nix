@@ -56,12 +56,29 @@
             ./nixos/D-135/configuration.nix
           ];
         };
+	MPU = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/MPU/configuration.nix
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
         "maxh@D-135" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
+          modules = [
+            hyprland.homeManagerModules.default
+
+            # > Our main home-manager configuration file <
+            ./home-manager/home.nix
+          ];
+        };
+	"maxh@MPU" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
           modules = [
