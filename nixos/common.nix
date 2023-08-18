@@ -174,20 +174,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (neovim.override {
-      vimAlias = true;
-      configure = {
-        packages.myPlugins = with pkgs.vimPlugins; {
-          start = [ vim-nix ];
-          opt = [];
-        };
-        customRc = ''
-          set nocompatible
-          set syntax on
-          set nu
-        '';
-      };
-    })
     # Hyprland
     swaylock-effects swayidle wlogout swaybg # Login etc
     wayland-protocols
@@ -241,6 +227,7 @@
     cmake
     git
     jdk11
+    jdk17
     nodejs
     nixfmt
     docker-compose

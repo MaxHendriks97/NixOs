@@ -133,6 +133,7 @@
   };
 
   home.packages = with pkgs; [
+    nixd
   ];
 
   # Nicely reload system units when changing configs
