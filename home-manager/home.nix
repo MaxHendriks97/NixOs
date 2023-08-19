@@ -15,7 +15,7 @@
     # ./nvim.nix
     ./waybar
     ./hyprland.nix
-    ./nixvim.nix
+    ./nixvim
   ];
 
   colorScheme = nix-colors.colorschemes.catppuccin-mocha;
