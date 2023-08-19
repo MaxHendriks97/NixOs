@@ -1,4 +1,7 @@
 { config, lib, pkgs, ... }: {
+  imports = [
+    ./alpha.nix
+  ];
   programs.nixvim = {
     enable = true;
     clipboard = {
@@ -61,9 +64,9 @@
         action = "<CMD>vs<CR>";
         desc = "Vertical split";
       };
-      "<leader>wk" = {
+      "<leader>wc" = {
         action = "<CMD>q<CR>";
-        desc = "Kill window";
+        desc = "Close window";
       };
       "<leader>w<up>" = {
         action = "<CMD>wincmd k<CR>";
@@ -184,75 +187,6 @@
         data = "/home/maxh/.cache/jdtls/workspace";
       };
       nvim-autopairs.enable = true;
-      alpha = {
-        enable = true;
-        layout = [
-          {
-            type = "padding";
-            val = 1;
-          }
-          {
-            opts = {
-              hl = "Identifier";
-              position = "center";
-            };
-            type = "text";
-            val = [
-              "          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖         "
-              "          ▜███▙       ▜███▙  ▟███▛         "
-              "           ▜███▙       ▜███▙▟███▛          "
-              "            ▜███▙       ▜██████▛           "
-              "     ▟█████████████████▙ ▜████▛     ▟▙     "
-              "    ▟███████████████████▙ ▜███▙    ▟██▙    "
-              "           ▄▄▄▄▖           ▜███▙  ▟███▛    "
-              "          ▟███▛             ▜██▛ ▟███▛     "
-              "         ▟███▛               ▜▛ ▟███▛      "
-              "▟███████████▛                  ▟██████████▙"
-              "▜██████████▛                  ▟███████████▛"
-              "      ▟███▛ ▟▙               ▟███▛         "
-              "     ▟███▛ ▟██▙             ▟███▛          "
-              "    ▟███▛  ▜███▙           ▝▀▀▀▀           "
-              "    ▜██▛    ▜███▙ ▜██████████████████▛     "
-              "     ▜▛     ▟████▙ ▜████████████████▛      "
-              "           ▟██████▙       ▜███▙            "
-              "          ▟███▛▜███▙       ▜███▙           "
-              "         ▟███▛  ▜███▙       ▜███▙          "
-              "         ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘          "
-            ];
-          }
-          {
-            type = "padding";
-            val = 2;
-          }
-          {
-            type = "group";
-            val = [
-              {
-                command = "<CMD>Telescope find_files<CR>";
-                desc = "  Find File";
-                shortcut = "f";
-              }
-              {
-                command = ":qa<CR>";
-                desc = "  Quit Neovim";
-                shortcut = "q";
-              }
-            ];
-          }
-          {
-            type = "padding";
-            val = 2;
-          }
-          {
-            opts = {
-              hl = "Constant";
-              position = "center";
-            };
-            type = "text";
-            val = "https://github.com/siph/nixvim-flake";
-          }
-        ];
-      };
       project-nvim.enable = true;
       telescope = {
         enable = true;
