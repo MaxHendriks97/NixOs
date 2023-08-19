@@ -60,6 +60,8 @@
         enable = true;
         sources = [
           { name = "nvim_lsp"; }
+          { name = "nvim_lsp_signature_help"; }
+          { name = "nvim_ultisnips"; }
           { name = "treesitter"; }
           { name = "path"; }
           { name = "buffer"; }
@@ -128,6 +130,9 @@
         openMapping = "<leader>ot";
         terminalMappings = false;
       };
+      cursorline.enable = true;
+      fidget.enable = true;
+      gitsigns.enable = true;
     };
     extraPlugins = [
       pkgs.vimPlugins.lazygit-nvim
