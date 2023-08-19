@@ -108,10 +108,6 @@
       copilot-lua = {
         enable = true;
         suggestion.enabled = true;
-        panel = {
-          enabled = true;
-          autoTrigger = true;
-        };
       };
       treesitter = {
         enable = true;
@@ -139,6 +135,7 @@
           { name = "treesitter"; }
           { name = "path"; }
           { name = "buffer"; }
+          { name = "calc"; }
         ];
         mapping = {
           "<CR>" = "cmp.mapping.confirm({ select = true })";
@@ -268,7 +265,10 @@
       comment-nvim.enable = true;
       toggleterm = {
         enable = true;
+        insertMappings = false;
         openMapping = "<leader>ot";
+        terminalMappings = false;
+        # onOpen = "vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)";
       };
     };
     extraPlugins = [
