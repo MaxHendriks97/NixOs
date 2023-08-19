@@ -17,7 +17,7 @@
       #
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
-      monitor=eDP-1,2256x1504@60,0x0,1.5
+      # monitor=eDP-1,2256x1504@60,0x0,1.5
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
@@ -26,7 +26,7 @@
       exec-once = mako & waybar & poweralertd & blueman-applet
 
       # Wallpaper
-      exec-once = bash ~/nixos-config/home-manager/waybar/scripts/changewallpaper.sh
+      exec-once = bash ~/NixOs/home-manager/waybar/scripts/changewallpaper.sh
 
       # Source a file (multi-file configs)
       # source = ~/.config/hypr/myColors.conf

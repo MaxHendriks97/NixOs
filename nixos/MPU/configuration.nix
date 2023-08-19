@@ -9,6 +9,10 @@
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
+    inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-gpu-amd
+    inputs.hardware.nixosModules.common-pc-ssd
+    inputs.hardware.nixosModules.common-pc-hdd
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -19,6 +23,17 @@
   ];
 
   networking.hostName = "MPU";
+
+  boot.loader.efi.efiSysMountPoint = "/boot";
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  programs = {
+    steam.enable = true;
+  };
+
+  services = {
+    mullvad-vpn.enable = true;
+  };
 
   system.autoUpgrade = {
     enable = true;

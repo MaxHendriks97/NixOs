@@ -111,12 +111,12 @@
 
           "custom/wallpaper" = {
               format = "wallpaper";
-              on-click = "bash ~/nixos-config/home-manager/waybar/scripts/changewallpaper.sh";
+              on-click = "bash ~/NixOs/home-manager/waybar/scripts/changewallpaper.sh";
           };
 
           "custom/power-menu" = {
               format = "";
-              on-click = "bash ~/nixos-config/home-manager/waybar/scripts/power-menu/powermenu.sh &";
+              on-click = "bash ~/NixOs/home-manager/waybar/scripts/power-menu/powermenu.sh &";
           };
         };
       };

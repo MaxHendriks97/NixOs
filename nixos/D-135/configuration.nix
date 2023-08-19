@@ -23,6 +23,8 @@
 
   services.fwupd.enable = true;
 
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
   system.autoUpgrade = {
     enable = true;
     flake = "/home/maxh/nixos-config#D-135";

@@ -55,7 +55,6 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
@@ -85,13 +84,14 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  hardware.opengl.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  hardware.opengl.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -163,7 +163,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "input" "audio" ];
     };
   };
 
@@ -201,26 +201,28 @@
     swaylock-effects
 
     # Doom emacs dependencies
-    binutils
-    ripgrep
-    coreutils
-    fd
-    imagemagick
-    clang
-    pandoc
-    shellcheck
-    xorg.xwininfo
-    xdotool
-    xclip
-    html-tidy
-    nodePackages.stylelint
-    nodePackages.js-beautify
+    # binutils
+    # ripgrep
+    # coreutils
+    # fd
+    # imagemagick
+    # clang
+    # pandoc
+    # shellcheck
+    # xorg.xwininfo
+    # xdotool
+    # xclip
+    # html-tidy
+    # nodePackages.stylelint
+    # nodePackages.js-beautify
 
     # tdlib
     gnupg
     mu
     isync
-    ((emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]))
+    # ((emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]))
+   
+    home-manager
 
     # Dev tools
     gnumake
@@ -245,6 +247,8 @@
     spotify
     nomacs
     gnome.file-roller
+    qbittorrent
+    obsidian
   ];
 
   programs.dconf.enable = true;
@@ -257,6 +261,9 @@
       thunar-volman
     ];
   };
+
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
