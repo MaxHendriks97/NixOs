@@ -9,6 +9,11 @@
       mapleader = " ";
       maplocalleader = " ";
     };
+    maps.terminal = {
+      "<ESC>" = {
+        action = "<C-\\><C-n>";
+      };
+    };
     maps.normal = {
       " " = {
         action = "<Nop>";
@@ -268,7 +273,6 @@
         insertMappings = false;
         openMapping = "<leader>ot";
         terminalMappings = false;
-        # onOpen = "vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)";
       };
     };
     extraPlugins = [
