@@ -243,7 +243,7 @@
     _1password-gui
     htop
     neofetch
-    qgis-ltr
+    # qgis-ltr
     spotify
     nomacs
     gnome.file-roller

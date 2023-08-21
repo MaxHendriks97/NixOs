@@ -81,6 +81,13 @@
         action = "<CMD>LazyGit<CR>";
         desc = "Open LazyGit";
       };
+      "<leader>p" = {
+        desc = "Project";
+      };
+      "<leader>pp" = {
+        action = "<CMD>Telescope projects<CR>";
+        desc = "Select Project";
+      };
     };
   };
 }
