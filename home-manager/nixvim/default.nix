@@ -132,6 +132,13 @@
       fidget.enable = true;
       gitsigns.enable = true;
       luasnip.enable = true;
+      indent-blankline.enable = true;
+      intellitab.enable = true;
+      ledger.enable = true;
+      lsp-lines = {
+        enable = true;
+        currentLine = true;
+      };
     };
     extraPlugins = [
       pkgs.vimPlugins.lazygit-nvim
