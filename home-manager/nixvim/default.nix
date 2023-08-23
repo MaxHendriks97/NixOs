@@ -5,25 +5,23 @@
   ];
   programs.nixvim = {
     enable = true;
-    clipboard = {
-      register = "unnamedplus";
-      providers.wl-copy.enable = true;
-    };
-    globals = {
-      mapleader = " ";
-      maplocalleader = " ";
-    };
-    
-    colorschemes.catppuccin = {
-      enable = true;
-      flavour = "mocha";
-      integrations.which_key = true;
-    };
     options = {
       number = true;
       relativenumber = true;
       termguicolors = true;
       wrap = false;
+      expandtab = true;
+      tabstop = 4;
+      shiftwidth = 4;
+    };
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
+    colorschemes.catppuccin = {
+      enable = true;
+      flavour = "mocha";
+      integrations.which_key = true;
     };
     plugins = {
       which-key = {
@@ -86,6 +84,12 @@
       };
       lsp = {
         enable = true;
+        keymaps.lspBuf = {
+          "gd" = "definition";
+          "gD" = "references";
+          "gi" = "implementation";
+          "<leader>ca" = "code_action";
+        };
         servers = {
           pylsp = {
             enable = true;
@@ -103,7 +107,6 @@
         configuration = "/home/maxh/.cache/jdtls/config";
         data = "/home/maxh/.cache/jdtls/workspace";
       };
-      nvim-autopairs.enable = true;
       project-nvim.enable = true;
       telescope = {
         enable = true;
@@ -128,20 +131,40 @@
         openMapping = "<leader>ot";
         terminalMappings = false;
       };
-      cursorline.enable = true;
       fidget.enable = true;
       gitsigns.enable = true;
-      luasnip.enable = true;
-      indent-blankline.enable = true;
       intellitab.enable = true;
       ledger.enable = true;
       lsp-lines = {
         enable = true;
         currentLine = true;
       };
+      lspsaga = {
+        enable = true;
+      };
+      neogit.enable = true;
+      lualine = {
+        enable = true;
+        extensions = [
+          "chadtree"
+          "toggleterm"
+          #"nvim-dap-ui"
+        ];
+      };
+      mini = {
+        enable = true;
+        modules = {
+          ai = {};
+          animate = {};
+          basics = {};
+          bufremove = {};
+          cursorword = {};
+          hipatterns = {};
+          indentscope = {};
+          pairs = {};
+          trailspace = {};
+        };
+      };
     };
-    extraPlugins = [
-      pkgs.vimPlugins.lazygit-nvim
-    ];
   };
 }

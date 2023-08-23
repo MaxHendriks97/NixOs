@@ -1,4 +1,8 @@
 { config, lib, pkgs, ... }: {
+  programs.nixvim.globals = {
+    mapleader = " ";
+    maplocalleader = " ";
+  };
   programs.nixvim.maps = {
     terminal = {
       "<ESC>" = {
@@ -32,7 +36,7 @@
         desc = "Buffer";
       };
       "<leader>bk" = {
-        action = "<CMD>bd<CR>";
+        action = "<CMD>lua MiniBufremove.delete(0)<CR>";
         desc = "Kill buffer";
       };
       "<leader>bj" = {
@@ -68,6 +72,14 @@
       "<leader>w<right>" = {
         action = "<CMD>wincmd l<CR>";
       };
+      "<leader>wv" = {
+        desc = "Vertical split";
+        action = "<CMD>vsplit<CR>";
+      };
+      "<leader>wh" = {
+        desc = "Horizontal split";
+        action = "<CMD>split<CR>";
+      };
       "<leader>o" = {
         desc = "open";
       };
@@ -78,8 +90,8 @@
         desc = "git";
       };
       "<leader>gg" = {
-        action = "<CMD>LazyGit<CR>";
-        desc = "Open LazyGit";
+        action = "<CMD>Neogit<CR>";
+        desc = "Open Neogit";
       };
       "<leader>p" = {
         desc = "Project";
