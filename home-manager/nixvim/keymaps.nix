@@ -100,6 +100,13 @@
         action = "<CMD>Telescope projects<CR>";
         desc = "Select Project";
       };
+      "<leader>c" = {
+        desc = "Code";
+      };
+      "<leader>cd" = {
+        action = "<CMD>Trouble<CR>";
+        desc = "Diagnostics";
+      };
     };
   };
 }

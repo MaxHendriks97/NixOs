@@ -13,6 +13,7 @@
       expandtab = true;
       tabstop = 4;
       shiftwidth = 4;
+      guifont = "Iosevka Nerd Font:h12";
     };
     clipboard = {
       register = "unnamedplus";
@@ -34,7 +35,11 @@
       };
       copilot-lua = {
         enable = true;
-        suggestion.enabled = true;
+        suggestion = {
+          enabled = true;
+          autoTrigger = true;
+          keymap.accept = "<Right>";
+        };
       };
       treesitter = {
         enable = true;
@@ -122,7 +127,7 @@
         enable = true;
         showCloseIcon = false;
       };
-      auto-session.enable = true;
+      # auto-session.enable = true;
       chadtree.enable = true;
       comment-nvim.enable = true;
       toggleterm = {
@@ -135,12 +140,9 @@
       gitsigns.enable = true;
       intellitab.enable = true;
       ledger.enable = true;
-      lsp-lines = {
-        enable = true;
-        currentLine = true;
-      };
-      lspsaga = {
-        enable = true;
+      # lsp-lines = { enable = true; currentLine = true; };
+      lspsaga = { 
+        enable = true; 
       };
       neogit.enable = true;
       lualine = {
@@ -155,7 +157,7 @@
         enable = true;
         modules = {
           ai = {};
-          animate = {};
+          # animate = {};
           basics = {};
           bufremove = {};
           cursorword = {};
@@ -164,6 +166,10 @@
           pairs = {};
           trailspace = {};
         };
+      };
+      trouble = {
+        enable = true;
+        mode = "document_diagnostics";
       };
     };
   };

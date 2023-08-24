@@ -134,6 +134,7 @@
 
   home.packages = with pkgs; [
     nixd
+    neovide
   ];
 
   # Nicely reload system units when changing configs
