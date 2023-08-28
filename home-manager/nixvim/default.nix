@@ -127,7 +127,6 @@
         enable = true;
         showCloseIcon = false;
       };
-      # auto-session.enable = true;
       chadtree.enable = true;
       comment-nvim.enable = true;
       toggleterm = {
@@ -140,7 +139,6 @@
       gitsigns.enable = true;
       intellitab.enable = true;
       ledger.enable = true;
-      # lsp-lines = { enable = true; currentLine = true; };
       lspsaga = { 
         enable = true; 
       };
@@ -157,7 +155,6 @@
         enable = true;
         modules = {
           ai = {};
-          # animate = {};
           basics = {};
           bufremove = {};
           cursorword = {};
