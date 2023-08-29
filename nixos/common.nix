@@ -199,29 +199,8 @@
     grim
     playerctl
     swaylock-effects
-
-    # Doom emacs dependencies
-    # binutils
-    # ripgrep
-    # coreutils
-    # fd
-    # imagemagick
-    # clang
-    # pandoc
-    # shellcheck
-    # xorg.xwininfo
-    # xdotool
-    # xclip
-    # html-tidy
-    # nodePackages.stylelint
-    # nodePackages.js-beautify
-
-    # tdlib
-    gnupg
-    mu
-    isync
-    # ((emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]))
    
+    # Home manager
     home-manager
 
     # Dev tools
@@ -249,6 +228,14 @@
     gnome.file-roller
     qbittorrent
     obsidian
+    
+    # Ranger
+    ranger
+    w3m
+    file
+    ffmpeg
+    atool
+    poppler_utils
   ];
 
   programs.dconf.enable = true;
