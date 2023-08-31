@@ -135,12 +135,12 @@
         openMapping = "<leader>ot";
         terminalMappings = false;
       };
-      fidget.enable = true;
+      fidget.enable = false;
       gitsigns.enable = true;
       intellitab.enable = true;
       ledger.enable = true;
       lspsaga = { 
-        enable = true; 
+        enable = false; 
       };
       neogit.enable = true;
       lualine = {
@@ -168,6 +168,14 @@
         enable = true;
         mode = "document_diagnostics";
       };
+      ts-autotag.enable = true;
+      noice = {
+          enable = true;
+      };
+      notify.enable = true;
     };
+    extraPlugins = with pkgs; [
+        vimPlugins.dressing-nvim       
+    ];
   };
 }
