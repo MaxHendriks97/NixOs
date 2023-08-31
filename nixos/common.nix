@@ -173,82 +173,74 @@
     platformTheme = "qt5ct";
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     # Hyprland
-    swaylock-effects swayidle wlogout swaybg # Login etc
-    wayland-protocols
-    libsForQt5.qt5.qtwayland
-    libsForQt5.lightly
-    libsForQt5.qt5ct
-    qt6.qtwayland
-    gtk-engine-murrine
-    catppuccin-gtk
-    rofi-wayland mako rofimoji # Drawer + notifications
-    viewnior # Image viewer
-    pavucontrol # Audio controls
-    vlc
-    sway-contrib.grimshot
-    pamixer
-    brightnessctl
-    gtk3
-    libnotify
-    poweralertd
-    dbus
-    catppuccin-kvantum
-    gnome.gnome-themes-extra
-    grim
-    playerctl
-    swaylock-effects
-
-    # Doom emacs dependencies
-    # binutils
-    # ripgrep
-    # coreutils
-    # fd
-    # imagemagick
-    # clang
-    # pandoc
-    # shellcheck
-    # xorg.xwininfo
-    # xdotool
-    # xclip
-    # html-tidy
-    # nodePackages.stylelint
-    # nodePackages.js-beautify
-
-    # tdlib
-    gnupg
-    mu
-    isync
-    # ((emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]))
+    pkgs.swaylock-effects 
+    pkgs.swayidle 
+    pkgs.wlogout 
+    pkgs.swaybg
+    pkgs.wayland-protocols
+    pkgs.libsForQt5.qt5.qtwayland
+    pkgs.libsForQt5.lightly
+    pkgs.libsForQt5.qt5ct
+    pkgs.qt6.qtwayland
+    pkgs.gtk-engine-murrine
+    pkgs.catppuccin-gtk
+    pkgs.rofi-wayland 
+    pkgs.mako 
+    pkgs.rofimoji
+    pkgs.viewnior
+    pkgs.pavucontrol
+    pkgs.vlc
+    pkgs.sway-contrib.grimshot
+    pkgs.pamixer
+    pkgs.brightnessctl
+    pkgs.gtk3
+    pkgs.libnotify
+    pkgs.poweralertd
+    pkgs.dbus
+    pkgs.catppuccin-kvantum
+    pkgs.gnome.gnome-themes-extra
+    pkgs.grim
+    pkgs.playerctl
+    pkgs.swaylock-effects
    
-    home-manager
+    # Home manager
+    pkgs.home-manager
 
     # Dev tools
-    gnumake
-    cmake
-    git
-    jdk11
-    jdk17
-    nodejs
-    nixfmt
-    docker-compose
-    beekeeper-studio
-    unzip
+    pkgs.gnumake
+    pkgs.cmake
+    pkgs.git
+    pkgs.jdk11
+    pkgs.jdk17
+    pkgs.nodejs
+    pkgs.nixfmt
+    pkgs.docker-compose
+    pkgs.beekeeper-studio
+    pkgs.unzip
     (pkgs.python3.withPackages(ps: with ps; [ pip ]))
 
     # User programs
-    firefox
-    slack
-    _1password-gui
-    htop
-    neofetch
+    pkgs.firefox
+    pkgs.slack
+    pkgs._1password-gui
+    pkgs.htop
+    pkgs.neofetch
     # qgis-ltr
-    spotify
-    nomacs
-    gnome.file-roller
-    qbittorrent
-    obsidian
+    pkgs.spotify
+    pkgs.nomacs
+    pkgs.gnome.file-roller
+    pkgs.qbittorrent
+    pkgs.obsidian
+    
+    # Ranger
+    pkgs.ranger
+    pkgs.w3m
+    pkgs.file
+    pkgs.ffmpeg
+    pkgs.atool
+    pkgs.poppler_utils
   ];
 
   programs.dconf.enable = true;

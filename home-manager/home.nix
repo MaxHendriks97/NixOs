@@ -132,9 +132,9 @@
     };
   };
 
-  home.packages = with pkgs; [
-    nixd
-    neovide
+  home.packages = [
+    pkgs.nixd
+    pkgs.neovide
   ];
 
   # Nicely reload system units when changing configs
