@@ -172,7 +172,7 @@
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = $mainMod, Q, exec, kitty
       bind = $mainMod, C, killactive,
-      bind = $mainMod, M, exit,
+      bind = $mainMod, B, exit,
       bind = $mainMod, E, exec, dolphin
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, R, exec, rofi -show drun
