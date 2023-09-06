@@ -22,7 +22,24 @@
     colorschemes.catppuccin = {
       enable = true;
       flavour = "mocha";
-      integrations.which_key = true;
+      integrations = {
+        cmp = true;
+        gitsigns = true;
+        leap = true;
+        lsp_trouble = true;
+        mini = true;
+        neogit = true;
+        neotest = true;
+        noice = true;
+        notify = true;
+        rainbow_delimiters = true;
+        telescope = true;
+        treesitter = true;
+        treesitter_context = true;
+        which_key = true;
+        native_lsp.enabled = true;
+      };
+      terminalColors = true;
     };
     plugins = {
       which-key = {
@@ -120,6 +137,7 @@
         };
         extensions = {
           project-nvim.enable = true;
+          fzf-native.enable = true;
         };
       };
       leap.enable = true;
@@ -139,9 +157,6 @@
       gitsigns.enable = true;
       intellitab.enable = true;
       ledger.enable = true;
-      lspsaga = { 
-        enable = false; 
-      };
       neogit.enable = true;
       lualine = {
         enable = true;
@@ -173,9 +188,12 @@
           enable = true;
       };
       notify.enable = true;
+      nvim-colorizer.enable = true;
+      rainbow-delimiters.enable = true;
+      spider.enable = true;
     };
     extraPlugins = with pkgs; [
-        vimPlugins.dressing-nvim       
+        vimPlugins.dressing-nvim
     ];
   };
 }
