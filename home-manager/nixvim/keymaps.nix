@@ -8,10 +8,6 @@
       "<ESC>" = {
         action = "<C-\\><C-n>";
       };
-      "w".action = "<CMD>lua require('spider').motion('w')<CR>";
-      "e".action = "<CMD>lua require('spider').motion('e')<CR>";
-      "b".action = "<CMD>lua require('spider').motion('b')<CR>";
-      "ge".action = "<CMD>lua require('spider').motion('ge')<CR>";
     };
     normalVisualOp = {
       "w".action = "<CMD>lua require('spider').motion('w')<CR>";

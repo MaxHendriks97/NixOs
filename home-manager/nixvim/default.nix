@@ -173,7 +173,6 @@
           basics = {};
           bufremove = {};
           cursorword = {};
-          hipatterns = {};
           indentscope = {};
           pairs = {};
           trailspace = {};
@@ -191,6 +190,8 @@
       nvim-colorizer.enable = true;
       rainbow-delimiters.enable = true;
       spider.enable = true;
+      todo-comments.enable = true;
+      ts-context-commentstring.enable = true;
     };
     extraPlugins = with pkgs; [
         vimPlugins.dressing-nvim
