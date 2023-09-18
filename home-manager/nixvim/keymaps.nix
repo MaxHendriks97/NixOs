@@ -106,11 +106,15 @@
         action = "<CMD>Telescope projects<CR>";
         desc = "Select Project";
       };
+      "<leader>pd" = {
+        action = "<CMD>TroubleToggle workspace_diagnostics<CR>";
+        desc = "Diagnostics";
+      };
       "<leader>c" = {
         desc = "Code";
       };
       "<leader>cd" = {
-        action = "<CMD>Trouble<CR>";
+        action = "<CMD>TroubleToggle document_diagnostics<CR>";
         desc = "Diagnostics";
       };
     };
