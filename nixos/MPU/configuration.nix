@@ -27,6 +27,10 @@
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
 
+  environment.systemPackages = [
+    pkgs.discord
+  ];
+
   programs = {
     steam.enable = true;
   };
