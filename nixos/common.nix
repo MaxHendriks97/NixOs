@@ -175,9 +175,9 @@
 
   environment.systemPackages = [
     # Hyprland
-    pkgs.swaylock-effects 
-    pkgs.swayidle 
-    pkgs.wlogout 
+    pkgs.swaylock-effects
+    pkgs.swayidle
+    pkgs.wlogout
     pkgs.swaybg
     pkgs.wayland-protocols
     pkgs.libsForQt5.qt5.qtwayland
@@ -186,8 +186,8 @@
     pkgs.qt6.qtwayland
     pkgs.gtk-engine-murrine
     pkgs.catppuccin-gtk
-    pkgs.rofi-wayland 
-    pkgs.mako 
+    pkgs.rofi-wayland
+    pkgs.mako
     pkgs.rofimoji
     pkgs.viewnior
     pkgs.pavucontrol
@@ -204,7 +204,7 @@
     pkgs.grim
     pkgs.playerctl
     pkgs.swaylock-effects
-   
+
     # Home manager
     pkgs.home-manager
 
@@ -221,6 +221,17 @@
     pkgs.unzip
     (pkgs.python3.withPackages(ps: with ps; [ pip ]))
 
+    # Ranger
+    pkgs.ranger
+    pkgs.w3m
+    pkgs.file
+    pkgs.ffmpeg
+    pkgs.atool
+    pkgs.poppler_utils
+
+    # Neovim dependencies
+    pkgs.ripgrep
+
     # User programs
     pkgs.firefox
     pkgs.slack
@@ -233,14 +244,6 @@
     pkgs.gnome.file-roller
     pkgs.qbittorrent
     pkgs.obsidian
-    
-    # Ranger
-    pkgs.ranger
-    pkgs.w3m
-    pkgs.file
-    pkgs.ffmpeg
-    pkgs.atool
-    pkgs.poppler_utils
   ];
 
   programs.dconf.enable = true;
