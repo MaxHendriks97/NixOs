@@ -15,6 +15,12 @@
       shiftwidth = 4;
       guifont = "Iosevka Nerd Font:h12";
     };
+    extraConfigLua = ''
+      if vim.g.neovide then
+        vim.g.neovide_hide_mouse_when_typing = true
+        vim.g.neovide_fullscreen = true
+      end
+    '';
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
