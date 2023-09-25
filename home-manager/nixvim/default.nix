@@ -198,6 +198,18 @@
       spider.enable = true;
       todo-comments.enable = true;
       ts-context-commentstring.enable = true;
+      oil = {
+        enable = true;
+      };
+      hardtime = {
+        enable = false;
+        disabledKeys = {
+          "<Up>" = [];
+          "<Down>" = [];
+          "<Left>" = [];
+          "<Right>" = [];
+        };
+      };
     };
     extraPlugins = with pkgs; [
         vimPlugins.dressing-nvim
