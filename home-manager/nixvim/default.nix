@@ -120,12 +120,6 @@
           "<leader>ca" = "code_action";
         };
         servers = {
-          pylsp = {
-            enable = true;
-            settings.plugins = {
-              pyflakes.enabled = true;
-            };
-          };
           nixd.enable = true;
           tsserver.enable = true;
         };
