@@ -69,7 +69,12 @@
         enable = true;
         indent = true;
       };
-      treesitter-context.enable = true;
+      treesitter-context = {
+        enable = true;
+        maxLines = 5;
+        trimScope = "inner";
+        mode = "topline";
+      };
       treesitter-refactor.enable = true;
       lspkind = {
         enable = true;
