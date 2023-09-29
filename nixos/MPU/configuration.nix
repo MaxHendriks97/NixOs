@@ -27,16 +27,13 @@
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
 
-  environment.systemPackages = [
-    pkgs.discord
-  ];
-
   programs = {
     steam.enable = true;
   };
 
   services = {
     mullvad-vpn.enable = true;
+    flatpak.enable = true;
   };
 
   system.autoUpgrade = {
