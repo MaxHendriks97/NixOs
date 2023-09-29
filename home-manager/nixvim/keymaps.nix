@@ -110,6 +110,10 @@
         action = "<CMD>TroubleToggle workspace_diagnostics<CR>";
         desc = "Diagnostics";
       };
+      "<leader>pf" = {
+        action = "<CMD>Telescope live_grep<CR>";
+        desc = "Find string in project";
+      };
       "<leader>c" = {
         desc = "Code";
       };

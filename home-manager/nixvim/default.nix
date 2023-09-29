@@ -15,6 +15,13 @@
       shiftwidth = 4;
       guifont = "Iosevka Nerd Font:h12";
     };
+    extraConfigLua = ''
+      if vim.g.neovide then
+        vim.g.neovide_hide_mouse_when_typing = true
+        vim.g.neovide_fullscreen = true
+        vim.g.neovide_transparency = 0.9
+      end
+    '';
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
@@ -62,7 +69,12 @@
         enable = true;
         indent = true;
       };
-      treesitter-context.enable = true;
+      treesitter-context = {
+        enable = true;
+        maxLines = 5;
+        trimScope = "inner";
+        mode = "topline";
+      };
       treesitter-refactor.enable = true;
       lspkind = {
         enable = true;
@@ -113,12 +125,6 @@
           "<leader>ca" = "code_action";
         };
         servers = {
-          pylsp = {
-            enable = true;
-            settings.plugins = {
-              pyflakes.enabled = true;
-            };
-          };
           nixd.enable = true;
           tsserver.enable = true;
         };
@@ -192,6 +198,18 @@
       spider.enable = true;
       todo-comments.enable = true;
       ts-context-commentstring.enable = true;
+      oil = {
+        enable = true;
+      };
+      hardtime = {
+        enable = false;
+        disabledKeys = {
+          "<Up>" = [];
+          "<Down>" = [];
+          "<Left>" = [];
+          "<Right>" = [];
+        };
+      };
     };
     extraPlugins = with pkgs; [
         vimPlugins.dressing-nvim

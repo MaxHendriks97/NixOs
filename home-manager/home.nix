@@ -95,7 +95,7 @@
 
   home.sessionVariables = {
     BROWSER = "firefox";
-    TERMINL = "kitty";
+    TERMINAL = "kitty";
     EDITOR = "emacs";
     VISUAL = "emacs";
     QT_QPA_PLATFORM = "wayland-egl";
@@ -128,6 +128,7 @@
       settings = {
         background = "#${config.colorScheme.colors.base00}";
         foreground = "#${config.colorScheme.colors.base05}";
+        background_opacity = "0.8";
       };
     };
   };
