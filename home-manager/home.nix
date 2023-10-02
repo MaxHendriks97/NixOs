@@ -60,13 +60,15 @@
     enable = true;
     font.name = "Iosevka";
     theme = {
-      name = "Catppuccin-Mocha-Compact-Green-dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "green" ];
-        size = "compact";
-        tweaks = [ "rimless" ];
-        variant = "mocha";
-      };
+      name = "Materia-dark";
+      package = pkgs.materia-theme;
+      #name = "Catppuccin-Mocha-Compact-Green-dark";
+      #package = pkgs.catppuccin-gtk.override {
+      #  accents = [ "green" ];
+      #  size = "compact";
+      #  tweaks = [ "rimless" ];
+      #  variant = "mocha";
+      #};
     };
     iconTheme = {
       name = "Papirus";
