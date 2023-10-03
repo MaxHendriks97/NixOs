@@ -49,6 +49,7 @@
 
       # Random variables
       env = XCURSOR_SIZE,24
+      env = NEOVIDE_MULTIGRID,1
 
       exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland DBUS_SESSION_BUS_ADDRESS
       exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
