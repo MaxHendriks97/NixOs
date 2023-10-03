@@ -92,6 +92,10 @@
       "<leader>op" = {
         action = "<CMD>CHADopen<CR>";
       };
+      "<leader>of" = {
+        action = "<CMD>lua MiniFiles.open()<CR>";
+        desc = "Open Minifiles";
+      };
       "<leader>g" = {
         desc = "git";
       };

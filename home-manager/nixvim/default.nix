@@ -182,6 +182,12 @@
           indentscope = {};
           pairs = {};
           trailspace = {};
+          files = {
+            mappings = {
+              go_in = "<Right>";
+              go_out = "<Left>";
+            };
+          };
         };
       };
       trouble = {
@@ -198,9 +204,6 @@
       spider.enable = true;
       todo-comments.enable = true;
       ts-context-commentstring.enable = true;
-      oil = {
-        enable = true;
-      };
       hardtime = {
         enable = false;
         disabledKeys = {
