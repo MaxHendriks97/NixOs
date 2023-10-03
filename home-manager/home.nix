@@ -138,7 +138,6 @@
   home.packages = [
     pkgs.nixd
     pkgs.neovide
-    pkgs.teams
   ];
 
   # Nicely reload system units when changing configs
