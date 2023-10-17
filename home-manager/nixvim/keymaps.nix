@@ -16,7 +16,12 @@
     ##{ key = "<leader>q"; options.desc = "quit/session"; }
     { key = "<leader>qq"; action = "<CMD>qa<CR>"; options.desc = "quit"; }
     ##{ key = "<leader>b"; options.desc = "Buffer"; }
-    { key = "<leader>bk"; action = "<CMD>lua MiniBufremove.delete(0)<CR>"; options.desc = "Kill buffer"; }
+    {
+      key = "<leader>bk";
+      action = "function() MiniBufremove.delete(0) end";
+      lua = true;
+      options.desc = "Kill buffer";
+    }
     { key = "<leader>bj"; action = "<CMD>BufferLinePick<CR>"; options.desc = "Jump to buffer"; }
     { key = "gt"; action = "<CMD>bn<CR>"; }
     { key = "gT"; action = "<CMD>bp<CR>"; }
@@ -40,5 +45,6 @@
     { key = "<leader>pf"; action = "<CMD>Telescope live_grep<CR>"; options.desc = "Find string in project"; }
     #{ key = "<leader>c"; options.desc = "Code"; }
     { key = "<leader>cd"; action = "<CMD>TroubleToggle document_diagnostics<CR>"; options.desc = "Diagnostics"; }
+    { key = "s"; action = "<CMD>lua require('flash').jump()<CR>"; }
   ];
 }

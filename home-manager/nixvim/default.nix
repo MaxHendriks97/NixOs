@@ -32,7 +32,6 @@
       integrations = {
         cmp = true;
         gitsigns = true;
-        leap = true;
         lsp_trouble = true;
         mini = true;
         neogit = true;
@@ -146,7 +145,9 @@
           fzf-native.enable = true;
         };
       };
-      leap.enable = true;
+      flash = {
+        enable = true;
+      };
       bufferline = {
         enable = true;
         showCloseIcon = false;
