@@ -147,6 +147,7 @@
       };
       flash = {
         enable = true;
+        modes.search.enabled = false;
       };
       bufferline = {
         enable = true;

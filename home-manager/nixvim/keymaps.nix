@@ -11,7 +11,8 @@
     { key = "ge"; action = "<CMD>lua require('spider').motion('ge')<CR>"; }
     { key = " "; action = "<Nop>"; options.silent = true; }
     #{ key = "<leader>f"; options.desc = "File"; }
-    { key = "<leader>ff"; action = "<CMD>Telescope find_files<CR>"; options.desc = "Find File"; }
+    { key = "<leader><leader>"; action = "require('telescope.builtin').find_files"; lua = true; options.desc = "Find project file"; }
+    { key = "<leader>ff"; action = "function() require('telescope.builtin').find_files({cwd = '~'}) end"; lua = true; options.desc = "Find File"; }
     { key = "<leader>fs"; action = "<CMD>w<CR>"; options.desc = "Save"; }
     ##{ key = "<leader>q"; options.desc = "quit/session"; }
     { key = "<leader>qq"; action = "<CMD>qa<CR>"; options.desc = "quit"; }
@@ -46,5 +47,6 @@
     #{ key = "<leader>c"; options.desc = "Code"; }
     { key = "<leader>cd"; action = "<CMD>TroubleToggle document_diagnostics<CR>"; options.desc = "Diagnostics"; }
     { key = "s"; action = "<CMD>lua require('flash').jump()<CR>"; }
+    { key = "S"; action = "<CMD>lua require('flash').jump()<CR>"; }
   ];
 }
