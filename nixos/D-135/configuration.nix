@@ -25,6 +25,14 @@
 
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  programs = {
+    steam.enable = true;
+  };
+
+  services = {
+    flatpak.enable = true;
+  };
+
   system.autoUpgrade = {
     enable = true;
     flake = "/home/maxh/nixos-config#D-135";
