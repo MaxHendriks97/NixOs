@@ -203,6 +203,7 @@
       notify.enable = true;
       nvim-colorizer.enable = true;
       rainbow-delimiters.enable = true;
+      rust-tools.enable = true;
       spider.enable = true;
       todo-comments.enable = true;
       ts-context-commentstring.enable = true;

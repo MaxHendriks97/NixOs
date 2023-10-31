@@ -138,6 +138,9 @@
   home.packages = [
     pkgs.nixd
     pkgs.neovide
+    pkgs.rustc
+    pkgs.cargo
+    pkgs.gimp
   ];
 
   # Nicely reload system units when changing configs
