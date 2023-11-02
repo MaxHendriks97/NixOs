@@ -171,6 +171,7 @@
         extensions = [
           "chadtree"
           "toggleterm"
+          "trouble"
           #"nvim-dap-ui"
         ];
       };
