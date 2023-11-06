@@ -122,15 +122,7 @@
 
   virtualisation.docker.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "docker" "docker-compose" "npm" ];
-      theme = "";
-    };
-  };
-
+  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   fonts = {

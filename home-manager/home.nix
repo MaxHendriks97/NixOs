@@ -98,8 +98,9 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     TERMINAL = "kitty";
-    EDITOR = "emacs";
-    VISUAL = "emacs";
+    EDITOR = "nvim";
+    VISUAL = "neovide";
+    SHELL = "zsh";
     QT_QPA_PLATFORM = "wayland-egl";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
@@ -125,6 +126,29 @@
     home-manager.enable = true;
     git.enable = true;
     lazygit.enable = true;
+    zsh = {
+      enable = true;
+      enableAutosuggestions = true;
+      syntaxHighlighting.enable = true;
+      enableCompletion = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "docker" "docker-compose" "npm" ];
+        theme = "";
+      };
+      plugins = with pkgs; [
+        {
+          name = "pure";
+          src = fetchFromGitHub {
+            owner = "sindresorhus";
+            repo = "pure";
+            rev = "v1.22.0";
+            sha256 = "TR4CyBZ+KoZRs9XDmWE5lJuUXXU1J8E2Z63nt+FS+5w=";
+          };
+          file = "pure.zsh";
+        }
+      ];
+    };
     kitty = {
       enable = true;
       settings = {
