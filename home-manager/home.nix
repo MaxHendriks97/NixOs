@@ -98,26 +98,27 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     TERMINAL = "kitty";
-    EDITOR = "emacs";
-    VISUAL = "emacs";
-    QT_QPA_PLATFORM = "wayland-egl";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    SDL_VIDEODRIVER = "wayland";
-    _JAVA_AWT_WM_NONREPARENTING = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    CLUTTER_BACKEND = "wayland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    GTK_USE_PORTAL = "1";
-    NIXOS_XDG_OPEN_USE_PORTAL = "1";
-    XDG_CACHE_HOME = "\${HOME}/.cache";
-    XDG_CONFIG_HOME = "\${HOME}/.config";
-    XDG_BIN_HOME = "\${HOME}/.local/bin";
-    XDG_DATA_HOME = "\${HOME}/.local/share";
+    EDITOR = "nvim";
+    VISUAL = "neovide";
+    #SHELL = "zsh";
+    #QT_QPA_PLATFORM = "wayland-egl";
+    #QT_QPA_PLATFORMTHEME = "qt5ct";
+    #QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    #QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    #MOZ_ENABLE_WAYLAND = "1";
+    #SDL_VIDEODRIVER = "wayland";
+    #_JAVA_AWT_WM_NONREPARENTING = "1";
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    #CLUTTER_BACKEND = "wayland";
+    #XDG_SESSION_TYPE = "wayland";
+    #XDG_CURRENT_DESKTOP = "Hyprland";
+    #XDG_SESSION_DESKTOP = "Hyprland";
+    #GTK_USE_PORTAL = "1";
+    #NIXOS_XDG_OPEN_USE_PORTAL = "1";
+    #XDG_CACHE_HOME = "\${HOME}/.cache";
+    #XDG_CONFIG_HOME = "\${HOME}/.config";
+    #XDG_BIN_HOME = "\${HOME}/.local/bin";
+    #XDG_DATA_HOME = "\${HOME}/.local/share";
   };
 
   # Enable home-manager and git
@@ -125,6 +126,29 @@
     home-manager.enable = true;
     git.enable = true;
     lazygit.enable = true;
+    zsh = {
+      enable = true;
+      enableAutosuggestions = true;
+      syntaxHighlighting.enable = true;
+      enableCompletion = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "docker" "docker-compose" "npm" ];
+        theme = "";
+      };
+      plugins = with pkgs; [
+        {
+          name = "pure";
+          src = fetchFromGitHub {
+            owner = "sindresorhus";
+            repo = "pure";
+            rev = "v1.22.0";
+            sha256 = "TR4CyBZ+KoZRs9XDmWE5lJuUXXU1J8E2Z63nt+FS+5w=";
+          };
+          file = "pure.zsh";
+        }
+      ];
+    };
     kitty = {
       enable = true;
       settings = {
