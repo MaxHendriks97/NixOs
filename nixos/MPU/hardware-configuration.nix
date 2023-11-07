@@ -26,11 +26,13 @@
   fileSystems."/mnt/ssd" =
     { device = "/dev/disk/by-uuid/aaf84bc5-2021-4d87-8389-cdbed2f48c5a";
       fsType = "ext4";
+      options = [ "rw" ];
     };
 
   fileSystems."/mnt/big" =
     { device = "/dev/disk/by-uuid/B49CC0619CC0202A";
       fsType = "ntfs";
+      options = [ "rw" ];
     };
 
   # fileSystems."/mnt/small" =
@@ -52,6 +54,5 @@
   # networking.interfaces.enp7s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
