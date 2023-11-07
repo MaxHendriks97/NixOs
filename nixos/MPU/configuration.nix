@@ -26,6 +26,13 @@
 
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelParams = [
+    "video=DP-3:3440x1440@144"
+  ];
+
+  hardware.opengl.driSupport = true;
+
 
   programs = {
     steam.enable = true;
