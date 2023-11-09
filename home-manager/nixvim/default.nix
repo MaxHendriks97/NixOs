@@ -220,6 +220,7 @@
     };
     extraPlugins = with pkgs; [
         vimPlugins.dressing-nvim
+        vimPlugins.zen-mode-nvim
     ];
   };
 }
