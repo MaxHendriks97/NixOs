@@ -148,6 +148,10 @@
           file = "pure.zsh";
         }
       ];
+      initExtra = "
+        export PATH=$PATH:$HOME/bin/
+        neofetch
+      ";
     };
     kitty = {
       enable = true;
@@ -165,6 +169,7 @@
     pkgs.rustc
     pkgs.cargo
     pkgs.gimp
+    pkgs.megasync
   ];
 
   # Nicely reload system units when changing configs
