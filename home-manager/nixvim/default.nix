@@ -3,6 +3,14 @@
     ./keymaps.nix
     ./alpha.nix
   ];
+  home.packages = [
+    pkgs.nixpkgs-fmt
+    pkgs.nodePackages.eslint_d
+    pkgs.nodePackages.jsonlint
+    pkgs.yamllint
+    pkgs.nodePackages.markdownlint-cli
+    pkgs.shellcheck
+  ];
   programs.nixvim = {
     enable = true;
     options = {
@@ -30,16 +38,18 @@
       enable = true;
       flavour = "mocha";
       integrations = {
+        alpha = true;
         cmp = true;
+        flash = true;
         gitsigns = true;
         lsp_trouble = true;
-        mini = true;
+        mini.enabled = true;
         neogit = true;
         neotest = true;
         noice = true;
         notify = true;
         rainbow_delimiters = true;
-        telescope = true;
+        telescope.enabled = true;
         treesitter = true;
         treesitter_context = true;
         which_key = true;
@@ -86,6 +96,21 @@
             buffer = "[BUF]";
             path = "[PATH]";
           };
+        };
+      };
+      lint = {
+        enable = true;
+        lintersByFt = {
+          nix = [ "nixpkgs-fmt" ];
+          rust = [ "cargo" ];
+          python = [ "flake8" ];
+          javascript = [ "eslint_d" ];
+          typescript = [ "eslint_d" ];
+          typescriptreact = [ "eslint_d" ];
+          json = [ "jsonlint" ];
+          yaml = [ "yamllint" ];
+          markdown = [ "markdownlint" ];
+          sh = [ "shellcheck" ];
         };
       };
       nvim-cmp = {
