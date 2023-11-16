@@ -138,6 +138,12 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "maxh" ];
+  };
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
@@ -240,7 +246,6 @@
     # User programs
     pkgs.firefox
     pkgs.slack
-    pkgs._1password-gui
     pkgs.htop
     pkgs.neofetch
     # qgis-ltr
