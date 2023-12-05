@@ -232,7 +232,6 @@
       rust-tools.enable = true;
       spider.enable = true;
       todo-comments.enable = true;
-      ts-context-commentstring.enable = true;
       hardtime = {
         enable = false;
         disabledKeys = {
