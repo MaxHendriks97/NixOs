@@ -138,6 +138,18 @@
               end
             '';
           };
+          "<S-Tab>" = {
+            modes = [ "i" "s" ];
+            action = ''
+              function(fallback)
+                if cmp.visible() then
+                  cmp.select_prev_item()
+                else
+                  fallback()
+                end
+              end
+            '';
+          };
         };
       };
       lsp = {
