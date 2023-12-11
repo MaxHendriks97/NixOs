@@ -170,6 +170,7 @@
     pkgs.cargo
     pkgs.gimp
     pkgs.megasync
+    pkgs.libreoffice
   ];
 
   # Nicely reload system units when changing configs
