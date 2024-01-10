@@ -4,7 +4,6 @@
     ./alpha.nix
   ];
   home.packages = [
-    pkgs.nixpkgs-fmt
     pkgs.nodePackages.eslint_d
     pkgs.nodePackages.jsonlint
     pkgs.yamllint
@@ -44,7 +43,6 @@
         gitsigns = true;
         lsp_trouble = true;
         mini.enabled = true;
-        neogit = true;
         neotest = true;
         noice = true;
         notify = true;
@@ -101,7 +99,6 @@
       lint = {
         enable = true;
         lintersByFt = {
-          nix = [ "nixpkgs-fmt" ];
           rust = [ "cargo" ];
           python = [ "flake8" ];
           javascript = [ "eslint_d" ];
@@ -202,7 +199,7 @@
       gitsigns.enable = true;
       intellitab.enable = true;
       ledger.enable = true;
-      neogit.enable = true;
+      fugitive.enable = true;
       lualine = {
         enable = true;
         extensions = [
