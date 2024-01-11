@@ -5,14 +5,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    emacs.url = "github:nix-community/emacs-overlay";
     nixvim.url = "github:nix-community/nixvim";
     hardware.url = "github:NixOs/nixos-hardware/master";
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, emacs, nixvim, hardware, nix-colors, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim, hardware, nix-colors, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [

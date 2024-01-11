@@ -18,6 +18,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
       # monitor=eDP-1,2256x1504@60,0x0,1.5
+      monitor=DP-3,3440x1440@144,0x0,1
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
@@ -80,7 +81,7 @@
           col.active_border = rgb(${config.colorScheme.colors.base0C}) rgb(${config.colorScheme.colors.base0B}) 45deg
           col.inactive_border = rgb(${config.colorScheme.colors.base04})
 
-          layout = dwindle
+          layout = master
       }
 
       # decoration {
@@ -122,7 +123,9 @@
 
       master {
           # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-          new_is_master = true
+          new_is_master = false
+          always_center_master = true
+          orientation = center
       }
 
       gestures {
@@ -191,6 +194,16 @@
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
+
+      # Switch orientation
+      bind = $mainMod SHIFT, left, layoutmsg, orientationleft
+      bind = $mainMod SHIFT, right, layoutmsg, orientationright
+      bind = $mainMod SHIFT, up, layoutmsg, orientationtop
+      bind = $mainMod SHIFT, down, layoutmsg, orientationbottom
+      bind = $mainMod SHIFT, M, layoutmsg, orientationcenter
+
+      # Switch master
+      bind = $mainMod, M, layoutmsg, swapwithmaster
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1

@@ -169,7 +169,6 @@
     pkgs.rustc
     pkgs.cargo
     pkgs.gimp
-    pkgs.megasync
     pkgs.libreoffice
   ];
 

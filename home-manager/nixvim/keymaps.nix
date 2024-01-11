@@ -39,7 +39,7 @@
     { key = "<leader>op"; action = "<CMD>CHADopen<CR>"; }
     { key = "<leader>of"; action = "<CMD>lua MiniFiles.open()<CR>"; options.desc = "Open Minifiles"; }
     #{ key = "<leader>g"; options.desc = "git"; }
-    { key = "<leader>gg"; action = "<CMD>Neogit<CR>"; options.desc = "Open Neogit"; }
+    { key = "<leader>gg"; action = "<CMD>Git<CR>"; options.desc = "Open Neogit"; }
     #{ key = "<leader>p"; options.desc = "Project"; }
     { key = "<leader>pp"; action = "<CMD>Telescope projects<CR>"; options.desc = "Select Project"; }
     { key = "<leader>pd"; action = "<CMD>TroubleToggle workspace_diagnostics<CR>"; options.desc = "Diagnostics"; }
