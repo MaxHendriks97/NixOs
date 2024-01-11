@@ -21,8 +21,6 @@
 
   networking.hostName = "D-135";
 
-  services.fwupd.enable = true;
-
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   programs = {
