@@ -33,6 +33,9 @@
 
   hardware.opengl.driSupport = true;
 
+  environment.systemPackages = [
+    pkgs.yuzu-mainline
+  ];
 
   programs = {
     steam.enable = true;
