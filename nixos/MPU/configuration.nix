@@ -42,7 +42,6 @@
   };
 
   services = {
-    mullvad-vpn.enable = true;
     flatpak.enable = true;
   };
 
