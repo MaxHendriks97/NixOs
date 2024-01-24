@@ -186,7 +186,6 @@
         enable = true;
         showCloseIcon = false;
       };
-      chadtree.enable = true;
       comment-nvim.enable = true;
       toggleterm = {
         enable = true;
@@ -202,7 +201,6 @@
       lualine = {
         enable = true;
         extensions = [
-          "chadtree"
           "toggleterm"
           "trouble"
           #"nvim-dap-ui"
