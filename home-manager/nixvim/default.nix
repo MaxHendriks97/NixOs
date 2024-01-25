@@ -112,7 +112,6 @@
         enable = true;
         sources = [
           { name = "nvim_lsp"; }
-          { name = "nvim_lsp_signature_help"; }
           { name = "luasnip"; }
           { name = "treesitter"; }
           { name = "path"; }
@@ -185,7 +184,6 @@
         enable = true;
         showCloseIcon = false;
       };
-      chadtree.enable = true;
       comment-nvim.enable = true;
       toggleterm = {
         enable = true;
@@ -201,7 +199,6 @@
       lualine = {
         enable = true;
         extensions = [
-          "chadtree"
           "toggleterm"
           "trouble"
           #"nvim-dap-ui"

@@ -37,6 +37,11 @@
     { key = "<leader>wh"; action = "<CMD>split<CR>"; options.desc = "Horizontal split"; }
     #{ key = "<leader>o"; options.desc = "open"; }
     { key = "<leader>op"; action = "<CMD>CHADopen<CR>"; }
+    {
+      key = "<leader>op";
+      action = "function() require('mini.files').open(vim.api.nvim_buf_get_name(0)) end";
+      lua = true;
+    }
     { key = "<leader>of"; action = "<CMD>lua MiniFiles.open()<CR>"; options.desc = "Open Minifiles"; }
     #{ key = "<leader>g"; options.desc = "git"; }
     { key = "<leader>gg"; action = "<CMD>Git<CR>"; options.desc = "Open Neogit"; }
