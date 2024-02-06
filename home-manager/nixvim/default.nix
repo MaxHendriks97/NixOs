@@ -163,8 +163,11 @@
       nix.enable = true;
       nvim-jdtls = {
         enable = true;
-        configuration = "/home/maxh/.cache/jdtls/config";
-        data = "/home/maxh/.cache/jdtls/workspace";
+        cmd = [
+          "${pkgs.jdt-language-server}/bin/jdtls"
+          "-data" "/home/maxh/.cache/jdtls/workspace"
+          "-configuration" "/home/maxh/.cache/jdtls/config"
+        ];
       };
       project-nvim.enable = true;
       telescope = {
