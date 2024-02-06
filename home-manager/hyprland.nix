@@ -16,6 +16,38 @@
   };
 
   config = {
+    home.packages = [
+      pkgs.swaylock-effects
+      pkgs.swayidle
+      pkgs.wlogout
+      pkgs.swaybg
+      pkgs.wayland-protocols
+      pkgs.libsForQt5.qt5.qtwayland
+      pkgs.libsForQt5.lightly
+      pkgs.libsForQt5.qt5ct
+      pkgs.qt6.qtwayland
+      pkgs.gtk-engine-murrine
+      pkgs.catppuccin-gtk
+      pkgs.rofi-wayland
+      pkgs.mako
+      pkgs.rofimoji
+      pkgs.viewnior
+      pkgs.pavucontrol
+      pkgs.vlc
+      pkgs.haruna
+      pkgs.sway-contrib.grimshot
+      pkgs.pamixer
+      pkgs.brightnessctl
+      pkgs.gtk3
+      pkgs.libnotify
+      pkgs.poweralertd
+      pkgs.dbus
+      pkgs.catppuccin-kvantum
+      pkgs.gnome.gnome-themes-extra
+      pkgs.grim
+      pkgs.playerctl
+    ];
+
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
