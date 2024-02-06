@@ -157,6 +157,7 @@
         servers = {
           nixd.enable = true;
           tsserver.enable = true;
+          phpactor.enable = true;
         };
       };
       nix.enable = true;
