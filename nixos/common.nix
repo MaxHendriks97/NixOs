@@ -149,6 +149,9 @@
     polkitPolicyOwners = [ "maxh" ];
   };
 
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
