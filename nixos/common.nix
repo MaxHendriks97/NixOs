@@ -277,6 +277,10 @@
 
   services.gvfs.enable = true;
   services.tumbler.enable = true;
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
