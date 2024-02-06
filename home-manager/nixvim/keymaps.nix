@@ -23,6 +23,10 @@
       lua = true;
       options.desc = "Kill buffer";
     }
+    {
+      key = "<leader>bK";
+      action = "<CMD>%bd<CR>";
+    }
     { key = "<leader>bj"; action = "<CMD>BufferLinePick<CR>"; options.desc = "Jump to buffer"; }
     { key = "gt"; action = "<CMD>bn<CR>"; }
     { key = "gT"; action = "<CMD>bp<CR>"; }
