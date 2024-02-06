@@ -31,7 +31,9 @@
     "video=DP-3:3440x1440@144"
   ];
 
+  hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
 
   environment.systemPackages = [
     pkgs.yuzu-mainline
