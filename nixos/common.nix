@@ -208,6 +208,7 @@
     pkgs.viewnior
     pkgs.pavucontrol
     pkgs.vlc
+    pkgs.haruna
     pkgs.sway-contrib.grimshot
     pkgs.pamixer
     pkgs.brightnessctl
