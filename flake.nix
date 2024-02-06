@@ -74,7 +74,7 @@
             hyprland.homeManagerModules.default
 
             # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./home-manager/D-135.nix
           ];
         };
 	"maxh@MPU" = home-manager.lib.homeManagerConfiguration {
@@ -84,7 +84,7 @@
             hyprland.homeManagerModules.default
 
             # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./home-manager/MPU.nix
           ];
         };
       };
