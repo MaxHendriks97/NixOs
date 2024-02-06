@@ -237,6 +237,8 @@
     pkgs.beekeeper-studio
     pkgs.unzip
     (pkgs.python3.withPackages(ps: with ps; [ pip ]))
+    pkgs.libxml2
+    pkgs.php83
 
     # Ranger
     pkgs.ranger
