@@ -7,6 +7,8 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
 
+      inputs.nixgl.overlay
+
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -95,13 +97,19 @@
     pulse.enable = true;
   };
 
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    enable = true;
+    extraPackages = [
+      pkgs.libGL
+    ];
+    setLdLibraryPath = true;
+  };
 
   xdg = {
     portal = {
       enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
+      extraPortals = [
+        pkgs.xdg-desktop-portal-hyprland
       ];
       config.common.default = "*";
     };
@@ -149,9 +157,6 @@
     polkitPolicyOwners = [ "maxh" ];
   };
 
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-
   fonts = {
     packages = with pkgs; [
       noto-fonts
@@ -195,6 +200,11 @@
   environment.systemPackages = [
     # Home manager
     pkgs.home-manager
+
+    # Java 8
+    pkgs.jre8
+    pkgs.glxinfo
+    pkgs.nixgl.nixGLIntel
 
     # Dev tools
     pkgs.gnumake

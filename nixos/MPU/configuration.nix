@@ -37,6 +37,7 @@
 
   environment.systemPackages = [
     pkgs.yuzu-mainline
+    pkgs.prismlauncher
   ];
 
   programs = {

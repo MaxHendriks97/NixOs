@@ -9,9 +9,10 @@
     hardware.url = "github:NixOs/nixos-hardware/master";
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "github:hyprwm/Hyprland";
+    nixgl.url = "github:guibou/nixGL";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, hardware, nix-colors, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim, hardware, nix-colors, hyprland, nixgl, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
