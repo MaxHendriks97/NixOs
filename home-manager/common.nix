@@ -13,9 +13,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./waybar
-    ./hyprland.nix
-    ./nixvim
+    ./modules
   ];
 
   colorScheme = nix-colors.colorschemes.catppuccin-mocha;
@@ -108,15 +106,15 @@
     _JAVA_AWT_WM_NONREPARENTING = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     CLUTTER_BACKEND = "wayland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    GTK_USE_PORTAL = "1";
-    NIXOS_XDG_OPEN_USE_PORTAL = "1";
-    XDG_CACHE_HOME = "\${HOME}/.cache";
-    XDG_CONFIG_HOME = "\${HOME}/.config";
-    XDG_BIN_HOME = "\${HOME}/.local/bin";
-    XDG_DATA_HOME = "\${HOME}/.local/share";
+    #XDG_SESSION_TYPE = "wayland";
+    #XDG_CURRENT_DESKTOP = "Hyprland";
+    #XDG_SESSION_DESKTOP = "Hyprland";
+    #GTK_USE_PORTAL = "1";
+    #NIXOS_XDG_OPEN_USE_PORTAL = "1";
+    #XDG_CACHE_HOME = "\${HOME}/.cache";
+    #XDG_CONFIG_HOME = "\${HOME}/.config";
+    #XDG_BIN_HOME = "\${HOME}/.local/bin";
+    #XDG_DATA_HOME = "\${HOME}/.local/share";
   };
 
   # Enable home-manager and git
@@ -173,7 +171,6 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-  services.megasync.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";

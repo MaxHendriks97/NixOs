@@ -2,4 +2,6 @@
   imports = [
     ./common.nix
   ];
+
+  services.megasync.enable = true;
 }
