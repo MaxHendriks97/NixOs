@@ -28,9 +28,7 @@
       pkgs.qt6.qtwayland
       pkgs.gtk-engine-murrine
       pkgs.catppuccin-gtk
-      pkgs.rofi-wayland
       pkgs.mako
-      pkgs.rofimoji
       pkgs.viewnior
       pkgs.pavucontrol
       pkgs.vlc
