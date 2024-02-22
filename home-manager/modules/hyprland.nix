@@ -68,7 +68,7 @@
           "blueman-applet"
 
           # Wallpaper
-          "bash ~/NixOs/home-manager/waybar/scripts/changewallpaper.sh"
+          "bash ~/NixOs/home-manager/modules/waybar/scripts/changewallpaper.sh"
 
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland DBUS_SESSION_BUS_ADDRESS"
           "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -146,11 +146,6 @@
         gestures = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more
             workspace_swipe = "off";
-        };
-
-        # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-        "device:epic-mouse-v1" = {
-            sensitivity = -0.5;
         };
 
         xwayland = {
