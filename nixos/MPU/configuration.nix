@@ -37,6 +37,7 @@
 
   environment.systemPackages = [
     pkgs.yuzu-mainline
+    pkgs.prismlauncher
   ];
 
   programs = {
@@ -47,9 +48,4 @@
     flatpak.enable = true;
   };
 
-  system.autoUpgrade = {
-    enable = true;
-    flake = "/home/maxh/NixOs#MPU";
-    flags = [ "--recreate-lock-file" ];
-  };
 }
