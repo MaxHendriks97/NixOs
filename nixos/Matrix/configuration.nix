@@ -19,6 +19,19 @@
   ];
 
   networking.hostName = "Matrix";
+  networking.hosts = {
+    "127.0.0.1" = [
+      "crs.local"
+      "login.aqqo.local"
+      "hqcrs.local"
+      "hqcrs2.local"
+      "mdm.local"
+      "parentsite.local"
+      "gateway.local"
+      "crs-backend-userportal-api.local"
+    ];
+  };
+
   environment.systemPackages = [
     # Aqqo Dev tools
     pkgs.php82
