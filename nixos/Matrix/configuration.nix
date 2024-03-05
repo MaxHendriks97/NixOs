@@ -19,4 +19,20 @@
   ];
 
   networking.hostName = "Matrix";
+  environment.systemPackages = [
+    # Aqqo Dev tools
+    pkgs.php82
+    pkgs.php82Extensions.curl
+    pkgs.php82Extensions.intl
+    pkgs.php82Extensions.mbstring
+    pkgs.php82Extensions.mysqli
+    pkgs.php82Extensions.opcache
+    pkgs.php82Extensions.xml
+    pkgs.php82Extensions.zip
+    pkgs.php82Packages.composer
+    pkgs.yarn
+    pkgs.flyway
+    pkgs.mysql-workbench
+    pkgs.gettext
+  ];
 }
