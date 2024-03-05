@@ -87,6 +87,8 @@
 
   services.fwupd.enable = true;
 
+  services.gnome.gnome-keyring.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -139,6 +141,7 @@
       auth include login
     '';
   };
+  security.pam.services.hyprland.enableGnomeKeyring = true;
 
   hardware.bluetooth = {
     enable = true;
