@@ -6,11 +6,11 @@
       settings = {
         mainBar = {
           layer = "top";
-          modules-left = ["temperature" "cpu" "memory" "wlr/workspaces"];
+          modules-left = ["temperature" "cpu" "memory" "hyprland/workspaces"];
           modules-center = ["mpris"];
           modules-right = ["network" "pulseaudio" "backlight" "battery" "clock" "tray" "custom/power-menu"];
 
-          "wlr/workspaces" = {
+          "hyprland/workspaces" = {
               format = "{icon}";
               all-outputs = true;
               on-click = "activate";
