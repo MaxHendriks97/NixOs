@@ -13,6 +13,13 @@
         hyprland monitor
       '';
     };
+
+    hyprlandWorkspaceBind = lib.mkOption {
+      default = null;
+      description = ''
+        hyprland workspace binding
+      '';
+    };
   };
 
   config = {
