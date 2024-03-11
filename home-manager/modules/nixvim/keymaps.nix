@@ -11,8 +11,8 @@
     { key = "ge"; action = "<CMD>lua require('spider').motion('ge')<CR>"; }
     { key = " "; action = "<Nop>"; options.silent = true; }
     #{ key = "<leader>f"; options.desc = "File"; }
-    { key = "<leader><leader>"; action = "require('telescope.builtin').find_files"; lua = true; options.desc = "Find project file"; }
-    { key = "<leader>ff"; action = "function() require('telescope.builtin').find_files({cwd = '~'}) end"; lua = true; options.desc = "Find File"; }
+    { key = "<leader><leader>"; action = "function() require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--no-ignore', '--hidden', '-g', '!.git' }, path_display = { 'absolute' }, wrap_results = true}) end"; lua = true; options.desc = "Find project file"; }
+    { key = "<leader>ff"; action = "function() require('telescope.builtin').find_files({cwd = '~', hidden = true}) end"; lua = true; options.desc = "Find File"; }
     { key = "<leader>fs"; action = "<CMD>w<CR>"; options.desc = "Save"; }
     ##{ key = "<leader>q"; options.desc = "quit/session"; }
     { key = "<leader>qq"; action = "<CMD>qa<CR>"; options.desc = "quit"; }
