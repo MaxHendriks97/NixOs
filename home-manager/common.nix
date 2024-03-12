@@ -127,6 +127,7 @@
       ignores = [
         "*.phpactor.json"
       ];
+      userName = "Max Hendriks";
     };
     lazygit.enable = true;
     zsh = {

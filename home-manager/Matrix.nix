@@ -3,6 +3,10 @@
     ./common.nix
   ];
 
+  programs.git = {
+    userEmail = "max@aqqo.com";
+  };
+
   hyprlandLayout = "dwindle";
   hyprlandMonitor = [
     "DP-2, 1920x1080, 0x0, 1"
