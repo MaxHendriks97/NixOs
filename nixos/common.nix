@@ -217,7 +217,6 @@
     # Dev tools
     pkgs.gnumake
     pkgs.cmake
-    pkgs.git
     pkgs.jdk11
     pkgs.jdk17
     pkgs.nodejs
