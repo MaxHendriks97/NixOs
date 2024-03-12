@@ -122,7 +122,12 @@
   # Enable home-manager and git
   programs = {
     home-manager.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      ignores = [
+        "*.phpactor.json"
+      ];
+    };
     lazygit.enable = true;
     zsh = {
       enable = true;
