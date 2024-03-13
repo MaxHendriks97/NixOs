@@ -14,10 +14,10 @@
       '';
     };
 
-    hyprlandWorkspaceBind = lib.mkOption {
-      default = null;
+    hyprlandWorkspace = lib.mkOption {
+      default = [];
       description = ''
-        hyprland workspace binding
+        hyprland workspace options
       '';
     };
   };
@@ -252,6 +252,8 @@
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
         ];
+
+        workspace = config.hyprlandWorkspace;
 
         bindm = [
           # Move/resize windows with mainMod + LMB/RMB and dragging

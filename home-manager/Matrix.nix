@@ -12,17 +12,17 @@
     "DP-2, 1920x1080, 0x0, 1"
     "DP-3, 1920x1080, 1920x0, 1"
   ];
-  hyprlandWorkspaceBind = [
-    "1, DP-2"
-    "2, DP-2"
-    "3, DP-2"
-    "4, DP-2"
-    "5, DP-2"
-    "6, DP-3"
-    "7, DP-3"
-    "8, DP-3"
-    "9, DP-3"
-    "0, DP-3"
+  hyprlandWorkspace = [
+    "1, monitor:DP-2, on-created-empty:kitty, default:true"
+    "2, monitor:DP-2, on-created-empty:spotify"
+    "3, monitor:DP-2"
+    "4, monitor:DP-2"
+    "5, monitor:DP-2"
+    "6, monitor:DP-3, on-created-empty:obsidian"
+    "7, monitor:DP-3, on-created-empty:firefox, default:true"
+    "8, monitor:DP-3, on-created-empty:beekeeper-studio"
+    "9, monitor:DP-3, on-created-empty:slack"
+    "10, monitor:DP-3"
   ];
 
   home.packages = [
