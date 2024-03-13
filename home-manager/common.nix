@@ -44,6 +44,7 @@
       allowUnfreePredicate = (_: true);
       permittedInsecurePackages = [
         "freeimage-unstable-2021-11-01"
+        "nix-2.16.2"
       ];
     };
   };
