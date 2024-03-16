@@ -99,7 +99,6 @@
       lint = {
         enable = true;
         lintersByFt = {
-          rust = [ "cargo" ];
           python = [ "flake8" ];
           javascript = [ "eslint_d" ];
           json = [ "jsonlint" ];
