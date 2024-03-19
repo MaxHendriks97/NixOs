@@ -127,6 +127,7 @@
       enable = true;
       ignores = [
         "*.phpactor.json"
+        "DevUtils.php"
       ];
       userName = "Max Hendriks";
     };
