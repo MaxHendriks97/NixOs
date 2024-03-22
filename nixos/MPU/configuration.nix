@@ -36,7 +36,6 @@
   hardware.opengl.driSupport32Bit = true;
 
   environment.systemPackages = [
-    pkgs.yuzu-mainline
     pkgs.prismlauncher
   ];
 
