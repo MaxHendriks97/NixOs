@@ -48,6 +48,6 @@
     pkgs.flyway
     pkgs.mysql-workbench
     pkgs.gettext
-    pkgs.onedriver
+    pkgs.onedrive
   ];
 }
