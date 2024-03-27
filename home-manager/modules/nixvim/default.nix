@@ -56,6 +56,14 @@
       terminalColors = true;
     };
     plugins = {
+      auto-session = {
+        enable = true;
+        autoSession = {
+          enabled = true;
+          enableLastSession = true;
+          createEnabled = true;
+        };
+      };
       which-key = {
         enable = true;
         icons = {
