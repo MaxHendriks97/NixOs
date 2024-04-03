@@ -8,7 +8,7 @@
           layer = "top";
           modules-left = ["temperature" "cpu" "memory" "hyprland/workspaces"];
           modules-center = ["mpris"];
-          modules-right = ["network" "pulseaudio" "backlight" "battery" "clock" "tray" "custom/power-menu"];
+          modules-right = ["network" "pulseaudio" "backlight" "battery" "clock" "tray"];
 
           "hyprland/workspaces" = {
               format = "{icon}";
