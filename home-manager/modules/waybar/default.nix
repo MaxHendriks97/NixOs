@@ -142,8 +142,8 @@
         #custom-power-menu {
             padding: 0 10px;
             border-radius: 15px;
-            background: #11111b;
-            color: #ffffff;
+            background: #${config.colorScheme.palette.base00};
+            color: #${config.colorScheme.palette.base06};
             box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -203,8 +203,8 @@
             padding-top: 4px;
             padding-bottom: 2px;
             font-weight: bolder;
-            color: #ffffff;
-            background-color: #11111b;
+            color: #${config.colorScheme.palette.base06};
+            background-color: #${config.colorScheme.palette.base00};
         }
 
         #workspaces button:hover {
@@ -212,8 +212,8 @@
         }
 
         #workspaces button.focused {
-            background-color: #64727D;
-            box-shadow: inset 0 -3px #ffffff;
+            background-color: #${config.colorScheme.palette.base0C};
+            box-shadow: inset 0 -3px #${config.colorScheme.palette.base06};
         }
 
         #workspaces button.urgent {
@@ -236,7 +236,8 @@
         }
 
         #clock {
-            background-color: #64727D;
+            background-color: #${config.colorScheme.palette.base0E};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #battery {
@@ -271,12 +272,13 @@
         }
 
         #cpu {
-            background-color: #2ecc71;
-            color: #000000;
+            background-color: #${config.colorScheme.palette.base09};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #memory {
-            background-color: #9b59b6;
+            background-color: #${config.colorScheme.palette.base0A};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #disk {
@@ -288,7 +290,8 @@
         }
 
         #network {
-            background-color: #2980b9;
+            background-color: #${config.colorScheme.palette.base0C};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #network.disconnected {
@@ -296,13 +299,13 @@
         }
 
         #pulseaudio {
-            background-color: #f1c40f;
-            color: #000000;
+            background-color: #${config.colorScheme.palette.base0D};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #pulseaudio.muted {
-            background-color: #90b1b1;
-            color: #2a5c45;
+            background-color: #${config.colorScheme.palette.base0D};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #wireplumber {
@@ -329,7 +332,8 @@
         }
 
         #temperature {
-            background-color: #f0932b;
+            background-color: #${config.colorScheme.palette.base08};
+            color: #${config.colorScheme.palette.base00};
             margin-left: 10px;
         }
 
@@ -338,7 +342,7 @@
         }
 
         #tray {
-            background-color: #2980b9;
+            background-color: #${config.colorScheme.palette.base00};
         }
 
         #tray > .passive {
@@ -347,7 +351,7 @@
 
         #tray > .needs-attention {
             -gtk-icon-effect: highlight;
-            background-color: #eb4d4b;
+            background-color: #${config.colorScheme.palette.base0E};
         }
 
         #idle_inhibitor {
@@ -360,7 +364,8 @@
         }
 
         #mpris {
-            background-color: #66cc99;
+            background-color: #${config.colorScheme.palette.base0B};
+            color: #${config.colorScheme.palette.base00};
         }
 
         #mpd {
