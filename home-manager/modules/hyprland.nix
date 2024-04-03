@@ -98,8 +98,8 @@
           gaps_in = 5;
           gaps_out = 20;
           border_size = 2;
-          "col.active_border" = "rgb(${config.colorScheme.colors.base0C}) rgb(${config.colorScheme.colors.base0B}) 45deg";
-          "col.inactive_border" = "rgb(${config.colorScheme.colors.base04})";
+          "col.active_border" = "rgb(${config.colorScheme.palette.base0D}) rgb(${config.colorScheme.palette.base0B}) 45deg";
+          "col.inactive_border" = "rgb(${config.colorScheme.palette.base04})";
 
           layout = config.hyprlandLayout;
         };
