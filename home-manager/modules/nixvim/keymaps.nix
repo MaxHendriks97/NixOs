@@ -28,8 +28,8 @@
       action = "<CMD>%bd<CR>";
     }
     { key = "<leader>bj"; action = "<CMD>BufferLinePick<CR>"; options.desc = "Jump to buffer"; }
-    { key = "gt"; action = "<CMD>bn<CR>"; }
-    { key = "gT"; action = "<CMD>bp<CR>"; }
+    { key = "gt"; action = "<CMD>BufferLineCycleNext<CR>"; }
+    { key = "gT"; action = "<CMD>BufferLineCyclePrev<CR>"; }
     #{ key = "<leader>w"; options.desc = "Window"; }
     { key = "<leader>ws"; action = "<CMD>vs<CR>"; options.desc = "Vertical split"; }
     { key = "<leader>wc"; action = "<CMD>q<CR>"; options.desc = "Close window"; }

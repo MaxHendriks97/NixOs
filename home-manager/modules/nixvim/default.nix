@@ -33,29 +33,58 @@
       register = "unnamedplus";
       providers.wl-copy.enable = true;
     };
-    colorschemes.catppuccin = {
+    colorschemes.base16 = {
       enable = true;
-      flavour = "mocha";
-      integrations = {
-        alpha = true;
-        cmp = true;
-        flash = true;
-        gitsigns = true;
-        lsp_trouble = true;
-        mini.enabled = true;
-        neotest = true;
-        noice = true;
-        notify = true;
-        rainbow_delimiters = true;
-        telescope.enabled = true;
-        treesitter = true;
-        treesitter_context = true;
-        which_key = true;
-        native_lsp.enabled = true;
+      colorscheme = {
+        base00 = "#${config.colorScheme.palette.base00}";
+        base01 = "#${config.colorScheme.palette.base01}";
+        base02 = "#${config.colorScheme.palette.base02}";
+        base03 = "#${config.colorScheme.palette.base03}";
+        base04 = "#${config.colorScheme.palette.base04}";
+        base05 = "#${config.colorScheme.palette.base05}";
+        base06 = "#${config.colorScheme.palette.base06}";
+        base07 = "#${config.colorScheme.palette.base07}";
+        base08 = "#${config.colorScheme.palette.base08}";
+        base09 = "#${config.colorScheme.palette.base09}";
+        base0A = "#${config.colorScheme.palette.base0A}";
+        base0B = "#${config.colorScheme.palette.base0B}";
+        base0C = "#${config.colorScheme.palette.base0C}";
+        base0D = "#${config.colorScheme.palette.base0D}";
+        base0E = "#${config.colorScheme.palette.base0E}";
+        base0F = "#${config.colorScheme.palette.base0F}";
       };
-      terminalColors = true;
     };
+    #colorschemes.catppuccin = {
+    #  enable = true;
+    #  flavour = "mocha";
+    #  integrations = {
+    #    alpha = true;
+    #    cmp = true;
+    #    flash = true;
+    #    gitsigns = true;
+    #    lsp_trouble = true;
+    #    mini.enabled = true;
+    #    neotest = true;
+    #    noice = true;
+    #    notify = true;
+    #    rainbow_delimiters = true;
+    #    telescope.enabled = true;
+    #    treesitter = true;
+    #    treesitter_context = true;
+    #    which_key = true;
+    #    native_lsp.enabled = true;
+    #  };
+    #  terminalColors = true;
+    #};
     plugins = {
+      auto-session = {
+        enable = true;
+        autoSession = {
+          enabled = true;
+          enableLastSession = true;
+          createEnabled = true;
+        };
+      };
       which-key = {
         enable = true;
         icons = {

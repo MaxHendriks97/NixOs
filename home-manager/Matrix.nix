@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
     ./common.nix
   ];
@@ -13,7 +13,7 @@
     "DP-3, 1920x1080, 1920x0, 1"
   ];
   hyprlandWorkspace = [
-    "1, monitor:DP-2, on-created-empty:kitty, default:true"
+    "1, monitor:DP-2, on-created-empty:neovide, default:true"
     "2, monitor:DP-2, on-created-empty:spotify"
     "3, monitor:DP-2"
     "4, monitor:DP-2"

@@ -16,7 +16,7 @@
     ./modules
   ];
 
-  colorScheme = nix-colors.colorschemes.catppuccin-mocha;
+  colorScheme = nix-colors.colorschemes.everforest-dark-hard;
 
   nixpkgs = {
     # You can add overlays here
@@ -162,8 +162,8 @@
     kitty = {
       enable = true;
       settings = {
-        background = "#${config.colorScheme.colors.base00}";
-        foreground = "#${config.colorScheme.colors.base05}";
+        background = "#${config.colorScheme.palette.base00}";
+        foreground = "#${config.colorScheme.palette.base05}";
         background_opacity = "0.8";
       };
     };
