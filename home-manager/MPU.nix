@@ -8,4 +8,8 @@
   };
 
   services.megasync.enable = true;
+
+  home.packages = [
+    pkgs.chuck
+  ];
 }
