@@ -220,7 +220,7 @@
     pkgs.jdk11
     pkgs.jdk17
     pkgs.nodejs
-    pkgs.nixfmt
+    pkgs.nixfmt-rfc-style
     pkgs.docker-compose
     pkgs.beekeeper-studio
     pkgs.unzip
