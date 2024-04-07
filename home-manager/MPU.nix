@@ -7,10 +7,10 @@
     userEmail = "max.hendriks1712@gmail.com";
   };
 
-  services.megasync.enable = true;
-
   home.packages = [
     pkgs.chuck
     pkgs.miniaudicle
+    pkgs.protontricks
+    pkgs.wine
   ];
 }
