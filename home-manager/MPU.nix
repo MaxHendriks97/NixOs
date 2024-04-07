@@ -11,5 +11,6 @@
 
   home.packages = [
     pkgs.chuck
+    pkgs.miniaudicle
   ];
 }
