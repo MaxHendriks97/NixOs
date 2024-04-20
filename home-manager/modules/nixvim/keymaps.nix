@@ -57,5 +57,7 @@
     { key = "<leader>cd"; action = "<CMD>TroubleToggle document_diagnostics<CR>"; options.desc = "Diagnostics"; }
     { key = "s"; action = "<CMD>lua require('flash').jump()<CR>"; }
     { key = "S"; action = "<CMD>lua require('flash').jump()<CR>"; }
+    { key = "<leader>m+"; action = "<CMD>! chuck + %<CR>"; }
+    { key = "<leader>m-"; action = "<CMD>! chuck --<CR>"; }
   ];
 }
