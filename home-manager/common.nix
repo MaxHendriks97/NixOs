@@ -139,6 +139,7 @@
     #XDG_CONFIG_HOME = "\${HOME}/.config";
     #XDG_BIN_HOME = "\${HOME}/.local/bin";
     #XDG_DATA_HOME = "\${HOME}/.local/share";
+    FLAKE = "/home/maxh/NixOs";
   };
 
   # Enable home-manager and git
