@@ -222,7 +222,9 @@
       toggleterm = {
         enable = true;
         insertMappings = false;
-        openMapping = "<leader>ot";
+        settings = {
+          open_mapping = "[[<leader>ot]]";
+        };
         terminalMappings = false;
       };
       fidget.enable = false;
