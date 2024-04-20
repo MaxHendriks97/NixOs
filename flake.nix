@@ -56,20 +56,20 @@
             ./nixos/D-135/configuration.nix
           ];
         };
-	MPU = nixpkgs.lib.nixosSystem {
+        MPU = nixpkgs.lib.nixosSystem {
+              specialArgs = { inherit inputs outputs; };
+              modules = [
+                # > Our main nixos configuration file <
+                ./nixos/MPU/configuration.nix
+              ];
+            };
+        Matrix = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            # > Our main nixos configuration file <
-            ./nixos/MPU/configuration.nix
+                # > Our main nixos configuration file <
+                ./nixos/Matrix/configuration.nix
           ];
         };
-	Matrix = nixpkgs.lib.nixosSystem {
-	  specialArgs = { inherit inputs outputs; };
-	  modules = [
-            # > Our main nixos configuration file <
-            ./nixos/Matrix/configuration.nix
-	  ];
- 	};
       };
 
       # Standalone home-manager configuration entrypoint
@@ -85,26 +85,26 @@
             ./home-manager/D-135.nix
           ];
         };
-	"maxh@MPU" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
-          modules = [
-            hyprland.homeManagerModules.default
+        "maxh@MPU" = home-manager.lib.homeManagerConfiguration {
+              pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+              extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
+              modules = [
+                hyprland.homeManagerModules.default
 
-            # > Our main home-manager configuration file <
-            ./home-manager/MPU.nix
+                # > Our main home-manager configuration file <
+                ./home-manager/MPU.nix
+              ];
+            };
+        "maxh@Matrix" = home-manager.lib.homeManagerConfiguration {
+              pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+              extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
+              modules = [
+                hyprland.homeManagerModules.default
+
+                # > Our main home-manager configuration file <
+                ./home-manager/Matrix.nix
           ];
         };
-	"maxh@Matrix" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
-          modules = [
-            hyprland.homeManagerModules.default
-
-            # > Our main home-manager configuration file <
-            ./home-manager/Matrix.nix
-	  ];
-	};
       };
     };
 }
