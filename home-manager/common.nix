@@ -16,7 +16,28 @@
     ./modules
   ];
 
-  colorScheme = nix-colors.colorschemes.everforest-dark-hard;
+  colorScheme = {
+    slug = "everforest";
+    name = "Everforest";
+    palette = {
+      base00 = "272e33"; # bg0,        Default background
+      base01 = "2e383c"; # bg1,        Lighter background
+      base02 = "414b50"; # bg3,        Selection background
+      base03 = "859289"; # grey1,      Comments
+      base04 = "9da9a0"; # grey2,      Dark foreground
+      base05 = "d3c6aa"; # fg,         Default foreground
+      base06 = "e4e1cd"; # bg3,        Light foreground CHANGE!
+      base07 = "fdf6e3"; # bg0,        Light background CHANGE!
+      base08 = "7fbbb3"; # blue
+      base09 = "d699b6"; # purple
+      base0A = "dbbc7f"; # yellow
+      base0B = "83c092"; # aqua
+      base0C = "e69875"; # orange
+      base0D = "a7c080"; # green
+      base0E = "e67e80"; # red
+      base0F = "7A8478"; # grey0
+    };
+  };
 
   nixpkgs = {
     # You can add overlays here
