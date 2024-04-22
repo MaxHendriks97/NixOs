@@ -165,6 +165,8 @@
     polkitPolicyOwners = [ "maxh" ];
   };
 
+  programs.nh.enable = true;
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
