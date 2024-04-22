@@ -43,6 +43,7 @@
     pkgs.php82Extensions.opcache
     pkgs.php82Extensions.xml
     pkgs.php82Extensions.zip
+    pkgs.php82Extensions.ssh2
     pkgs.php82Packages.php-cs-fixer
     pkgs.php82Packages.composer
     pkgs.yarn
