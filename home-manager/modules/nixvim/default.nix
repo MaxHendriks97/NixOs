@@ -187,7 +187,8 @@
         servers = {
           nixd.enable = true;
           tsserver.enable = true;
-          phpactor.enable = true;
+          #phpactor.enable = true;
+          intelephense.enable = true;
         };
       };
       nix.enable = true;
