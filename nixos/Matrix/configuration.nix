@@ -22,6 +22,7 @@
   networking.hosts = {
     "127.0.0.1" = [
       "crs.local"
+      "app.crs.local"
       "login.aqqo.local"
       "hqcrs.local"
       "hqcrs2.local"
