@@ -284,8 +284,17 @@
       };
     };
     extraPlugins = with pkgs; [
-        vimPlugins.dressing-nvim
-        vimPlugins.zen-mode-nvim
+      vimPlugins.dressing-nvim
+      vimPlugins.zen-mode-nvim
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "chuck-nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "gacallea";
+          repo = "chuck-nvim";
+          rev = "master";
+          hash = "sha256-vWmE47paJV9S13hYR3qjCp+9DVSQEYXZ7X3NgjpFJF0=";
+        };
+      })
     ];
   };
 }
