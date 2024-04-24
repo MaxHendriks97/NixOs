@@ -9,6 +9,7 @@
 
   home.packages = [
     pkgs.chuck
+    pkgs.audacity
     pkgs.miniaudicle
     pkgs.protontricks
     pkgs.wine
