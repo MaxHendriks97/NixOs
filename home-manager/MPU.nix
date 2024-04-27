@@ -13,5 +13,6 @@
     pkgs.miniaudicle
     pkgs.protontricks
     pkgs.wine
+    pkgs.yabause
   ];
 }
