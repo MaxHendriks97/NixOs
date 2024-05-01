@@ -18,6 +18,16 @@
     ./hardware-configuration.nix
   ];
 
+  systemd.user.services.onedrive = {
+    enable = true;
+    path = [
+      pkgs.onedrive
+    ];
+    serviceConfig = {
+      ExecStart = "onedrive --monitor --confdir='/home/maxh/.config/SharePoint_Documents'";
+    };
+  };
+
   networking.hostName = "Matrix";
   networking.hosts = {
     "127.0.0.1" = [
