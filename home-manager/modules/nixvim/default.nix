@@ -55,28 +55,6 @@
         base0F = "#${config.colorScheme.palette.base0F}";
       };
     };
-    #colorschemes.catppuccin = {
-    #  enable = true;
-    #  flavour = "mocha";
-    #  integrations = {
-    #    alpha = true;
-    #    cmp = true;
-    #    flash = true;
-    #    gitsigns = true;
-    #    lsp_trouble = true;
-    #    mini.enabled = true;
-    #    neotest = true;
-    #    noice = true;
-    #    notify = true;
-    #    rainbow_delimiters = true;
-    #    telescope.enabled = true;
-    #    treesitter = true;
-    #    treesitter_context = true;
-    #    which_key = true;
-    #    native_lsp.enabled = true;
-    #  };
-    #  terminalColors = true;
-    #};
     plugins = {
       auto-session = {
         enable = true;
