@@ -48,6 +48,7 @@
     pkgs.php83Extensions.ssh2
     pkgs.php83Packages.php-cs-fixer
     pkgs.php83Packages.composer
+    pkgs.php83Packages.php-cs-fixer
   ];
 
   programs = {

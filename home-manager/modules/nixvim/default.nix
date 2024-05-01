@@ -80,6 +80,17 @@
           keymap.accept = "<Right>";
         };
       };
+      conform-nvim = {
+        enable = true;
+        formatOnSave = ''
+          function()
+            return {lsp_fallback = true, timeout_ms = 500}
+          end
+        '';
+        formattersByFt = {
+          php = [ "php_cs_fixer" ];
+        };
+      };
       treesitter = {
         enable = true;
         indent = true;
