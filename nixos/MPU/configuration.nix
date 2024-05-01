@@ -37,6 +37,17 @@
 
   environment.systemPackages = [
     pkgs.prismlauncher
+    pkgs.php83
+    pkgs.php83Extensions.curl
+    pkgs.php83Extensions.intl
+    pkgs.php83Extensions.mbstring
+    pkgs.php83Extensions.mysqli
+    pkgs.php83Extensions.opcache
+    pkgs.php83Extensions.xml
+    pkgs.php83Extensions.zip
+    pkgs.php83Extensions.ssh2
+    pkgs.php83Packages.php-cs-fixer
+    pkgs.php83Packages.composer
   ];
 
   programs = {
