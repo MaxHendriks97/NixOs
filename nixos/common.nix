@@ -251,6 +251,10 @@
     pkgs.gnome.file-roller
     pkgs.qbittorrent
     pkgs.obsidian
+
+    # Windows emulation
+    pkgs.wine
+    pkgs.bottles
   ];
 
   programs.dconf.enable = true;
