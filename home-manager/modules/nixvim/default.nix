@@ -10,6 +10,7 @@
     pkgs.yamllint
     pkgs.nodePackages.markdownlint-cli
     pkgs.shellcheck
+    pkgs.prettierd
   ];
   programs.nixvim = {
     enable = true;
@@ -62,6 +63,12 @@
           enabled = true;
           enableLastSession = true;
           createEnabled = true;
+        };
+      };
+      conform-nvim = {
+        enable = true;
+        formattersByFt = {
+          javascript = ["prettierd"];
         };
       };
       which-key = {
