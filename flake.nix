@@ -12,7 +12,7 @@
     nixgl.url = "github:guibou/nixGL";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, hardware, nix-colors, hyprland, nixgl, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-colors, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -23,7 +23,7 @@
         "x86_64-darwin"
       ];
     in
-    rec {
+     {
       # Your custom packages
       # Acessible through 'nix build', 'nix shell', etc
       packages = forAllSystems (system:
