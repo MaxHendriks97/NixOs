@@ -145,6 +145,8 @@
 
   hardware.bluetooth = {
     enable = true;
+    package = pkgs.bluez;
+    input.General.ClassicBondedOnly = false;
     settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
