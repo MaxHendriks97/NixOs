@@ -156,6 +156,9 @@
 
   virtualisation.docker.enable = true;
 
+  programs.hyprland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -251,6 +254,10 @@
     pkgs.gnome.file-roller
     pkgs.qbittorrent
     pkgs.obsidian
+
+    # Windows emulation
+    pkgs.wine
+    pkgs.bottles
   ];
 
   programs.dconf.enable = true;

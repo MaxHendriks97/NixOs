@@ -200,7 +200,7 @@
           "$mainMod, Q, exec, kitty"
           "$mainMod, C, killactive,"
           "$mainMod, B, exit,"
-          "$mainMod, E, exec, dolphin"
+          "$mainMod, E, exec, thunar"
           "$mainMod, V, togglefloating,"
           "$mainMod, R, exec, rofi -show drun"
           "$mainMod, P, pseudo, # dwindle"
