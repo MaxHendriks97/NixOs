@@ -216,6 +216,9 @@
     # Home manager
     pkgs.home-manager
 
+    # Hyprland
+    pkgs.lxqt.lxqt-policykit
+
     # Java 8
     pkgs.jre8
     pkgs.glxinfo
