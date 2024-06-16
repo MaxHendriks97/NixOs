@@ -251,6 +251,7 @@
     # User programs
     pkgs.firefox
     #pkgs.nyxt
+    pkgs.qutebrowser
     pkgs.slack
     pkgs.htop
     pkgs.neofetch
