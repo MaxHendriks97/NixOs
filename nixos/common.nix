@@ -250,6 +250,7 @@
 
     # User programs
     pkgs.firefox
+    pkgs.nyxt
     pkgs.slack
     pkgs.htop
     pkgs.neofetch
