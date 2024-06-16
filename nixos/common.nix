@@ -252,6 +252,7 @@
     pkgs.firefox
     #pkgs.nyxt
     pkgs.qutebrowser
+    pkgs.jq
     pkgs.slack
     pkgs.htop
     pkgs.neofetch
