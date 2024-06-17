@@ -146,7 +146,7 @@
 
         master = {
             # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-            new_is_master = false;
+            new_status = "slave";
             always_center_master = true;
             orientation = "center";
         };
