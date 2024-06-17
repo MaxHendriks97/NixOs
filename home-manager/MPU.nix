@@ -13,5 +13,6 @@
     pkgs.miniaudicle
     pkgs.protontricks
     pkgs.yabause
+    pkgs.sidequest
   ];
 }

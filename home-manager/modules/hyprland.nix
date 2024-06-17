@@ -70,14 +70,16 @@
         exec-once = [
           "mako"
           "waybar"
+          "lxqt-policykit-agent"
+          "systemctl --user start graphical-session.target"
           "poweralertd"
           "blueman-applet"
 
           # Wallpaper
           "bash ~/NixOs/home-manager/modules/waybar/scripts/changewallpaper.sh"
 
-          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland DBUS_SESSION_BUS_ADDRESS"
-          "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "dbus-update-activation-environment --systemd --all"
+          "systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         ];
 
         input = {

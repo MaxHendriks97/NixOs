@@ -65,12 +65,6 @@
           createEnabled = true;
         };
       };
-      conform-nvim = {
-        enable = true;
-        formattersByFt = {
-          javascript = ["prettierd"];
-        };
-      };
       which-key = {
         enable = true;
         icons = {
@@ -85,6 +79,18 @@
           enabled = true;
           autoTrigger = true;
           keymap.accept = "<Right>";
+        };
+      };
+      conform-nvim = {
+        enable = true;
+        formatOnSave = ''
+          function()
+            return {lsp_fallback = true, timeout_ms = 500}
+          end
+        '';
+        formattersByFt = {
+          php = [ "php_cs_fixer" ];
+          javascript = ["prettierd"];
         };
       };
       treesitter = {

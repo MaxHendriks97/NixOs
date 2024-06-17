@@ -145,6 +145,8 @@
 
   hardware.bluetooth = {
     enable = true;
+    package = pkgs.bluez;
+    input.General.ClassicBondedOnly = false;
     settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
@@ -214,6 +216,9 @@
     # Home manager
     pkgs.home-manager
 
+    # Hyprland
+    pkgs.lxqt.lxqt-policykit
+
     # Java 8
     pkgs.jre8
     pkgs.glxinfo
@@ -245,6 +250,9 @@
 
     # User programs
     pkgs.firefox
+    #pkgs.nyxt
+    pkgs.qutebrowser
+    pkgs.jq
     pkgs.slack
     pkgs.htop
     pkgs.neofetch
