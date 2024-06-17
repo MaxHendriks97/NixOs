@@ -45,17 +45,31 @@
 
   environment.systemPackages = [
     # Aqqo Dev tools
-    pkgs.php82
-    pkgs.php82Extensions.curl
-    pkgs.php82Extensions.intl
-    pkgs.php82Extensions.mbstring
-    pkgs.php82Extensions.mysqli
-    pkgs.php82Extensions.opcache
-    pkgs.php82Extensions.xml
-    pkgs.php82Extensions.zip
-    pkgs.php82Extensions.ssh2
+    (pkgs.php82.withExtensions({enabled, all}:
+      enabled ++ [
+        all.curl
+        all.intl
+        all.mbstring
+        all.mysqli
+        all.opcache
+        all.xml
+        all.zip
+        all.ssh2
+      ]
+    ))
+    (pkgs.php82.withExtensions({enabled, all}:
+      enabled ++ [
+        all.curl
+        all.intl
+        all.mbstring
+        all.mysqli
+        all.opcache
+        all.xml
+        all.zip
+        all.ssh2
+      ]
+    )).packages.composer
     pkgs.php82Packages.php-cs-fixer
-    pkgs.php82Packages.composer
     pkgs.yarn
     pkgs.flyway
     pkgs.mysql-workbench
