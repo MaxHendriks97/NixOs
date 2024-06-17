@@ -21,7 +21,7 @@
     "6, monitor:DP-3, on-created-empty:obsidian"
     "7, monitor:DP-3, on-created-empty:firefox, default:true"
     "8, monitor:DP-3, on-created-empty:beekeeper-studio"
-    "9, monitor:DP-3, on-created-empty:slack"
+    "9, monitor:DP-3"
     "10, monitor:DP-3"
   ];
 
