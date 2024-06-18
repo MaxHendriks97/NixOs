@@ -95,6 +95,10 @@
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
+    cursorTheme = {
+      name = "phinger-cursors-dark";
+      package = pkgs.phinger-cursors;
+    };
 
     gtk3.extraConfig = {
       Settings = ''
@@ -112,7 +116,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.phinger-cursors;
-    name = "phinger-cursors";
+    name = "phinger-cursors-dark";
     size = 25;
   };
 

@@ -23,9 +23,6 @@
       tabstop = 4;
       shiftwidth = 4;
       guifont = "Iosevka Nerd Font:h12";
-      foldlevel = 99;
-      foldlevelstart = 1;
-      foldnestmax = 2;
     };
     extraConfigLua = ''
       if vim.g.neovide then
@@ -190,7 +187,7 @@
       };
       nix.enable = true;
       nvim-ufo = {
-        enable = true;
+        enable = false;
       };
       nvim-jdtls = {
         enable = true;
