@@ -4,5 +4,6 @@
     ./hyprland.nix
     ./rofi.nix
     ./nixvim
+    ./qutebrowser.nix
   ];
 }
