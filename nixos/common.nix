@@ -171,6 +171,7 @@
   };
 
   programs.nh.enable = true;
+  programs.nix-ld.enable = true;
 
   fonts = {
     packages = with pkgs; [
@@ -232,7 +233,6 @@
     pkgs.nodejs
     pkgs.nixfmt-rfc-style
     pkgs.docker-compose
-    pkgs.beekeeper-studio
     pkgs.unzip
     (pkgs.python3.withPackages(ps: with ps; [ pip ]))
     pkgs.libxml2
@@ -250,7 +250,7 @@
 
     # User programs
     pkgs.firefox
-    #pkgs.nyxt
+    pkgs.nyxt
     pkgs.qutebrowser
     pkgs.jq
     pkgs.slack

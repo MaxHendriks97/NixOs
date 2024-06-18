@@ -192,6 +192,7 @@
   };
 
   home.packages = [
+    pkgs.beekeeper-studio
     pkgs.nixd
     pkgs.neovide
     pkgs.rustc

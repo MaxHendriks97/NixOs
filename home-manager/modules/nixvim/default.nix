@@ -23,6 +23,9 @@
       tabstop = 4;
       shiftwidth = 4;
       guifont = "Iosevka Nerd Font:h12";
+      foldlevel = 99;
+      foldlevelstart = 1;
+      foldnestmax = 2;
     };
     extraConfigLua = ''
       if vim.g.neovide then
@@ -82,7 +85,7 @@
         };
       };
       conform-nvim = {
-        enable = true;
+        enable = false;
         formatOnSave = ''
           function()
             return {lsp_fallback = true, timeout_ms = 500}
@@ -186,6 +189,9 @@
         };
       };
       nix.enable = true;
+      nvim-ufo = {
+        enable = true;
+      };
       nvim-jdtls = {
         enable = true;
         cmd = [
