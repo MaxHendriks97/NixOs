@@ -239,6 +239,10 @@
               };
             };
           };
+
+          webpage = {
+            preferred_color_scheme = "dark";
+          };
         };
       };
     };
