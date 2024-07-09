@@ -14,7 +14,7 @@
   ];
   programs.nixvim = {
     enable = true;
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       termguicolors = true;
@@ -99,9 +99,11 @@
       };
       treesitter-context = {
         enable = true;
-        maxLines = 5;
-        trimScope = "inner";
-        mode = "topline";
+        settings = {
+          max_lines = 5;
+          trim_scope = "inner";
+          mode = "topline";
+        };
       };
       treesitter-refactor.enable = true;
       lspkind = {
@@ -197,33 +199,35 @@
           "-configuration" "/home/maxh/.cache/jdtls/config"
         ];
       };
-      project-nvim.enable = true;
+      project-nvim = {
+        enable = true;
+        enableTelescope = true;
+      };
       telescope = {
         enable = true;
-        defaults = {
+        settings.defaults = {
           path_display = ["smart"];
         };
         extensions = {
-          project-nvim.enable = true;
           fzf-native.enable = true;
         };
       };
       flash = {
         enable = true;
-        modes.search.enabled = false;
+        settings.modes.search.enabled = false;
       };
       bufferline = {
         enable = true;
         showCloseIcon = false;
       };
-      comment-nvim.enable = true;
+      comment.enable = true;
       toggleterm = {
         enable = true;
-        insertMappings = false;
         settings = {
           open_mapping = "[[<leader>ot]]";
+          insert_mappings = false;
+          terminal_mappings = false;
         };
-        terminalMappings = false;
       };
       fidget.enable = false;
       gitsigns.enable = true;
@@ -258,7 +262,7 @@
       };
       trouble = {
         enable = true;
-        mode = "document_diagnostics";
+        settings.mode = "document_diagnostics";
       };
       ts-autotag.enable = true;
       noice = {

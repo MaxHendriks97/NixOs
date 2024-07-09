@@ -11,16 +11,15 @@
     { key = "ge"; action = "<CMD>lua require('spider').motion('ge')<CR>"; }
     { key = " "; action = "<Nop>"; options.silent = true; }
     #{ key = "<leader>f"; options.desc = "File"; }
-    { key = "<leader><leader>"; action = "function() require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--no-ignore', '--hidden', '-g', '!.git' }, path_display = { 'absolute' }, wrap_results = true}) end"; lua = true; options.desc = "Find project file"; }
-    { key = "<leader>ff"; action = "function() require('telescope.builtin').find_files({cwd = '~', hidden = true}) end"; lua = true; options.desc = "Find File"; }
+    { key = "<leader><leader>"; action.__raw = "function() require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--no-ignore', '--hidden', '-g', '!.git' }, path_display = { 'absolute' }, wrap_results = true}) end"; options.desc = "Find project file"; }
+    { key = "<leader>ff"; action.__raw = "function() require('telescope.builtin').find_files({cwd = '~', hidden = true}) end"; options.desc = "Find File"; }
     { key = "<leader>fs"; action = "<CMD>w<CR>"; options.desc = "Save"; }
     ##{ key = "<leader>q"; options.desc = "quit/session"; }
     { key = "<leader>qq"; action = "<CMD>qa<CR>"; options.desc = "quit"; }
     ##{ key = "<leader>b"; options.desc = "Buffer"; }
     {
       key = "<leader>bk";
-      action = "function() MiniBufremove.delete(0) end";
-      lua = true;
+      action__raw = "function() MiniBufremove.delete(0) end";
       options.desc = "Kill buffer";
     }
     {
@@ -43,8 +42,7 @@
     { key = "<leader>op"; action = "<CMD>CHADopen<CR>"; }
     {
       key = "<leader>op";
-      action = "function() require('mini.files').open(vim.api.nvim_buf_get_name(0)) end";
-      lua = true;
+      action__raw = "function() require('mini.files').open(vim.api.nvim_buf_get_name(0)) end";
     }
     { key = "<leader>of"; action = "<CMD>lua MiniFiles.open()<CR>"; options.desc = "Open Minifiles"; }
     #{ key = "<leader>g"; options.desc = "git"; }
