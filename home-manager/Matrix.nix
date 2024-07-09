@@ -19,7 +19,7 @@
     "4, monitor:DP-2"
     "5, monitor:DP-2"
     "6, monitor:DP-3, on-created-empty:obsidian"
-    "7, monitor:DP-3, on-created-empty:firefox, default:true"
+    "7, monitor:DP-3, on-created-empty:qutebrowser, default:true"
     "8, monitor:DP-3, on-created-empty:beekeeper-studio"
     "9, monitor:DP-3"
     "10, monitor:DP-3"
