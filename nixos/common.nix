@@ -108,8 +108,12 @@
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-gtk
       ];
-      config.common.default = "*";
+      config.common = {
+        default = "hyprland;gtk";
+        "org.freedesktop.portal.FileChooser" = "gtk";
+      };
     };
     mime = {
       enable = true;
