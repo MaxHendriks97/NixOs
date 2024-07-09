@@ -69,7 +69,6 @@
         all.ssh2
       ]
     )).packages.composer
-    pkgs.php82Packages.php-cs-fixer
     pkgs.yarn
     pkgs.flyway
     pkgs.mysql-workbench
