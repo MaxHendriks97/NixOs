@@ -103,14 +103,6 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
   '';
 
-  hardware.opengl = {
-    enable = true;
-    extraPackages = [
-      pkgs.libGL
-    ];
-    setLdLibraryPath = true;
-  };
-
   xdg = {
     portal = {
       enable = true;
