@@ -19,7 +19,7 @@
     ##{ key = "<leader>b"; options.desc = "Buffer"; }
     {
       key = "<leader>bk";
-      action__raw = "function() MiniBufremove.delete(0) end";
+      action.__raw = "function() MiniBufremove.delete(0) end";
       options.desc = "Kill buffer";
     }
     {
@@ -42,7 +42,7 @@
     { key = "<leader>op"; action = "<CMD>CHADopen<CR>"; }
     {
       key = "<leader>op";
-      action__raw = "function() require('mini.files').open(vim.api.nvim_buf_get_name(0)) end";
+      action.__raw = "function() require('mini.files').open(vim.api.nvim_buf_get_name(0)) end";
     }
     { key = "<leader>of"; action = "<CMD>lua MiniFiles.open()<CR>"; options.desc = "Open Minifiles"; }
     #{ key = "<leader>g"; options.desc = "git"; }
