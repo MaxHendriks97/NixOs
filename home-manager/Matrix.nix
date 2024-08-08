@@ -27,5 +27,7 @@
 
   home.packages = [
     pkgs.lastpass-cli
+    pkgs.postman
+    pkgs.chromium
   ];
 }
