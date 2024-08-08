@@ -26,9 +26,6 @@
 
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.kernelModules = [ "hid-nintendo" ];
-  boot.extraModulePackages = [ 
-    config.boot.kernelPackages.ddcci-driver
-  ];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelParams = [
