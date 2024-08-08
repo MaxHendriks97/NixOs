@@ -25,12 +25,9 @@
   networking.hostName = "MPU";
 
   boot.loader.efi.efiSysMountPoint = "/boot";
-  boot.kernelModules = [ "xpad" "hid-nintendo" "xone" "xpadneo" ];
+  boot.kernelModules = [ "hid-nintendo" ];
   boot.extraModulePackages = [ 
-    config.boot.kernelPackages.xpadneo
     config.boot.kernelPackages.ddcci-driver
-    config.boot.kernelPackages.xone
-    config.boot.kernelPackages.xpadneo
   ];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
@@ -58,6 +55,8 @@
     steam.enable = true;
     alvr.enable = true;
   };
+
+  hardware.xone.enable = true;
 
   services = {
     flatpak.enable = true;
