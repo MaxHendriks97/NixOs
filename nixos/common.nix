@@ -90,7 +90,6 @@
   services.gnome.gnome-keyring.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
@@ -108,7 +107,6 @@
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-gtk
       ];
       config.common = {
         default = "hyprland;gtk";
