@@ -8,7 +8,7 @@
     };
 
     hyprlandMonitor = lib.mkOption {
-      default = "DP-3,3440x1440@144,0x0,1";
+      default = ",preferred,auto,1";
       description = ''
         hyprland monitor
       '';
