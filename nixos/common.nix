@@ -251,7 +251,7 @@
     # qgis-ltr
     pkgs.spotify
     pkgs.nomacs
-    pkgs.gnome.file-roller
+    pkgs.file-roller
     pkgs.qbittorrent
     pkgs.obsidian
 
