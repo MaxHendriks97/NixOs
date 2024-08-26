@@ -49,6 +49,7 @@
       pkgs.catppuccin-kvantum
       pkgs.gnome.gnome-themes-extra
       pkgs.grim
+      pkgs.slurp
       pkgs.playerctl
     ];
 
@@ -77,8 +78,9 @@
 
           # Wallpaper
           "bash ~/NixOs/home-manager/modules/waybar/scripts/changewallpaper.sh"
+          "gnome-keyring-daemon --start --components=secrets"
 
-          "dbus-update-activation-environment --systemd --all"
+          "dbus-update-activation-environment --systemd --all WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           "systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         ];
 

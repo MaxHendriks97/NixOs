@@ -5,7 +5,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      outputs.overlays.old-openvpn-packages
 
       inputs.nixgl.overlay
 
@@ -80,28 +80,27 @@
 
   time.timeZone = "Europe/Amsterdam";
 
-  # Enable CUPS to print documents
-  services.printing.enable = true;
-
-  services.nscd.enableNsncd = true;
-
-  #services.fwupd.enable = true;
-
-  services.gnome.gnome-keyring.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+  services = {
+    # Enable CUPS to print documents
+    printing.enable = true;
+    nscd.enableNsncd = true;
+    #fwupd.enable = true;
+    gnome.gnome-keyring.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+    udev.extraRules = ''
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
+    '';
+    flatpak.enable = true;
   };
 
-  services.udev.extraRules = ''
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
-  '';
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
 
   xdg = {
     portal = {

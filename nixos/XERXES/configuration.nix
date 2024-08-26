@@ -1,7 +1,7 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, lib, config, pkgs, nixpkgs-openvpn, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -9,6 +9,8 @@
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
+    inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-pc-laptop
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -25,16 +27,6 @@
     };
   };
 
-  systemd.user.services.onedrive = {
-    enable = true;
-    path = [
-      pkgs.onedrive
-    ];
-    serviceConfig = {
-      ExecStart = "onedrive --monitor --confdir='/home/maxh/.config/SharePoint_Documents'";
-    };
-  };
-
   networking.hostName = "XERXES";
   networking.hosts = {
     "127.0.0.1" = [
@@ -48,6 +40,10 @@
       "gateway.local"
       "crs-backend-userportal-api.local"
     ];
+  };
+
+  programs = {
+    #openvpn3.enable = true;
   };
 
   environment.systemPackages = [
@@ -81,5 +77,8 @@
     pkgs.mysql-workbench
     pkgs.gettext
     pkgs.onedrive
+    pkgs.onedrivegui
+    #pkgs.old-openvpn.openvpn_24
+    pkgs.openvpn
   ];
 }

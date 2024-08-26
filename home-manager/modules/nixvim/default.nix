@@ -58,7 +58,7 @@
     };
     plugins = {
       auto-session = {
-        enable = true;
+        enable = false;
         autoSession = {
           enabled = true;
           enableLastSession = true;

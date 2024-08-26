@@ -60,7 +60,6 @@
   };
 
   services = {
-    flatpak.enable = true;
     xserver = {
       enable = true;
       desktopManager.gnome.enable = true;
