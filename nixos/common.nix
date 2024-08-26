@@ -166,6 +166,13 @@
   programs.nh.enable = true;
   programs.nix-ld.enable = true;
 
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = "
+      ForwardAgent yes
+    ";
+  };
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
