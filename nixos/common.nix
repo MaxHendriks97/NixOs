@@ -107,7 +107,6 @@
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-gtk
       ];
       config.common = {
         default = "hyprland;gtk";
@@ -252,7 +251,7 @@
     # qgis-ltr
     pkgs.spotify
     pkgs.nomacs
-    pkgs.gnome.file-roller
+    pkgs.file-roller
     pkgs.qbittorrent
     pkgs.obsidian
 

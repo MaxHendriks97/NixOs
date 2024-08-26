@@ -14,5 +14,6 @@
     pkgs.protontricks
     pkgs.yabause
     pkgs.sidequest
+    pkgs.mgba
   ];
 }
