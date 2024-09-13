@@ -81,21 +81,15 @@
           keymap.accept = "<Right>";
         };
       };
-      conform-nvim = {
-        enable = false;
-        formatOnSave = ''
-          function()
-            return {lsp_fallback = true, timeout_ms = 500}
-          end
-        '';
-        formattersByFt = {
-          php = [ "php_cs_fixer" ];
-          javascript = ["prettierd"];
-        };
-      };
       treesitter = {
         enable = true;
-        indent = true;
+        settings = {
+          indent.enable = true;
+          highlight = {
+            additional_vim_regex_highlighting = false;
+            enable = true;
+          };
+        };
       };
       treesitter-context = {
         enable = true;
@@ -262,7 +256,6 @@
       };
       trouble = {
         enable = true;
-        settings.mode = "document_diagnostics";
       };
       ts-autotag.enable = true;
       noice = {
