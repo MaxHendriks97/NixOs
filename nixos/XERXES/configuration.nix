@@ -27,6 +27,15 @@
     };
   };
 
+  boot.kernelParams = [
+    "i915.enable_psr=0"
+  ];
+
+  hardware.ipu6 = {
+    enable = true;
+    platform = "ipu6epmtl";
+  };
+
   networking.hostName = "XERXES";
   networking.hosts = {
     "127.0.0.1" = [
