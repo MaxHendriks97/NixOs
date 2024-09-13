@@ -15,5 +15,6 @@
     pkgs.yabause
     pkgs.sidequest
     pkgs.mgba
+    pkgs.megasync
   ];
 }
