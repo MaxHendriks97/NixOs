@@ -47,7 +47,7 @@
       pkgs.poweralertd
       pkgs.dbus
       pkgs.catppuccin-kvantum
-      pkgs.gnome.gnome-themes-extra
+      pkgs.gnome-themes-extra
       pkgs.grim
       pkgs.slurp
       pkgs.playerctl

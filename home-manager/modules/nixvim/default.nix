@@ -67,7 +67,7 @@
       };
       which-key = {
         enable = true;
-        icons = {
+        settings.icons = {
           breadcrumb = "»";
           separator = "➜";
           group = "+";
@@ -174,7 +174,7 @@
         };
         servers = {
           nixd.enable = true;
-          tsserver.enable = true;
+          ts-ls.enable = true;
           #phpactor.enable = true;
           intelephense = {
             enable = true;
@@ -212,7 +212,7 @@
       };
       bufferline = {
         enable = true;
-        showCloseIcon = false;
+        settings.options.show_close_icon = false;
       };
       comment.enable = true;
       toggleterm = {
@@ -230,7 +230,7 @@
       fugitive.enable = true;
       lualine = {
         enable = true;
-        extensions = [
+        settings.extensions = [
           "toggleterm"
           "trouble"
           #"nvim-dap-ui"
@@ -238,6 +238,7 @@
       };
       mini = {
         enable = true;
+        mockDevIcons = true;
         modules = {
           ai = {};
           basics = {};
@@ -252,6 +253,7 @@
               go_out = "<Left>";
             };
           };
+          icons = {};
         };
       };
       trouble = {
@@ -269,7 +271,7 @@
       todo-comments.enable = true;
       hardtime = {
         enable = false;
-        disabledKeys = {
+        settings.disabledKeys = {
           "<Up>" = [];
           "<Down>" = [];
           "<Left>" = [];
