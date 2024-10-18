@@ -9,9 +9,10 @@
 
   hyprlandLayout = "dwindle";
   hyprlandMonitor = [
-    "eDP-1, preferred, 960x1080, 1, bitdepth, 10"
-    "DP-4, preferred, 0x0, 1, bitdepth, 10"
-    "DP-1, preferred, 1920x0, 1, bitdepth, 10"
+    "eDP-1, preferred, 960x1080, 1"
+    "DP-4, preferred, 0x0, 1"
+    "DP-1, preferred, 1920x0, 1"
+    "Unknown-1, disable"
   ];
   hyprlandWorkspace = [
     "1, monitor:DP-4, on-created-empty:neovide, default:true"
@@ -29,5 +30,6 @@
   home.packages = [
     pkgs.postman
     pkgs.lastpass-cli
+    pkgs.teams-for-linux
   ];
 }
