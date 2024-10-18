@@ -52,6 +52,8 @@
   programs = {
     steam.enable = true;
     alvr.enable = true;
+    adb.enable = true;
+    gamemode.enable = true;
   };
 
   hardware.xone.enable = true;
