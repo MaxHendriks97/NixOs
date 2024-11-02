@@ -6,6 +6,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.old-openvpn-packages
+      outputs.overlays.stable
 
       inputs.nixgl.overlay
 

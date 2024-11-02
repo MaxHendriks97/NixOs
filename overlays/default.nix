@@ -21,6 +21,14 @@
   #    config.allowUnfree = true;
   #  };
   #};
+
+  stable = final: _prev: {
+    stable = import inputs.stable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
+
   old-openvpn-packages = final: _prev: {
     old-openvpn = import inputs.nixpkgs-openvpn {
       system = final.system;

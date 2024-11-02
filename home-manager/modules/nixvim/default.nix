@@ -6,7 +6,6 @@
   home.packages = [
     pkgs.nodePackages.eslint_d
     pkgs.nodePackages.jsonlint
-    pkgs.nodePackages.intelephense
     pkgs.yamllint
     pkgs.nodePackages.markdownlint-cli
     pkgs.shellcheck
@@ -178,6 +177,7 @@
           #phpactor.enable = true;
           intelephense = {
             enable = true;
+            package = pkgs.intelephense;
           };
         };
       };

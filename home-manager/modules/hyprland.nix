@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ outputs, config, lib, pkgs, ... }: {
   options = {
     hyprlandLayout = lib.mkOption {
       default = "master";
@@ -23,6 +23,7 @@
   };
 
   config = {
+    nixpkgs.overlays = [ outputs.overlays.stable ];
     home.packages = [
       pkgs.swaylock-effects
       pkgs.swayidle
@@ -32,7 +33,7 @@
       pkgs.libsForQt5.qt5.qtwayland
       pkgs.libsForQt5.lightly
       pkgs.libsForQt5.qt5ct
-      pkgs.qt6.qtwayland
+      # pkgs.stable.qt6.qtwayland
       pkgs.gtk-engine-murrine
       pkgs.catppuccin-gtk
       pkgs.mako
