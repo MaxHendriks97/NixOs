@@ -177,7 +177,7 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       noto-fonts-extra
       liberation_ttf
