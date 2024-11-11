@@ -7,6 +7,7 @@
     "127.0.0.1" = [
       "crs.local"
       "app.crs.local"
+      "api.crs.local"
       "login.aqqo.local"
       "hqcrs.local"
       "hqcrs2.local"
