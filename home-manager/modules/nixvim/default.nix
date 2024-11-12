@@ -117,6 +117,8 @@
         lintersByFt = {
           python = [ "flake8" ];
           javascript = [ "eslint_d" ];
+          typescript = [ "eslint_d" ];
+          typescriptreact = [ "eslint_d" ];
           json = [ "jsonlint" ];
           yaml = [ "yamllint" ];
           markdown = [ "markdownlint" ];
