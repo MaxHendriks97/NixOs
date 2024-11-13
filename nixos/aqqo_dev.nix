@@ -52,4 +52,8 @@
     pkgs.onedrivegui
     pkgs.openvpn
   ];
+
+  programs.thunderbird = {
+    enable = true;
+  };
 }
