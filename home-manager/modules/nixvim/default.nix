@@ -56,14 +56,6 @@
       };
     };
     plugins = {
-      auto-session = {
-        enable = false;
-        autoSession = {
-          enabled = true;
-          enableLastSession = true;
-          createEnabled = true;
-        };
-      };
       which-key = {
         enable = true;
         settings.icons = {
@@ -109,6 +101,16 @@
             nvim_lua = "[LUA]";
             buffer = "[BUF]";
             path = "[PATH]";
+          };
+        };
+      };
+      none-ls = {
+        enable = true;
+        sources = {
+          diagnostics = {
+            phpstan = {
+              enable = true;
+            };
           };
         };
       };
@@ -175,8 +177,7 @@
         };
         servers = {
           nixd.enable = true;
-          ts-ls.enable = true;
-          #phpactor.enable = true;
+          ts_ls.enable = true;
           intelephense = {
             enable = true;
             package = pkgs.intelephense;
@@ -268,7 +269,7 @@
       notify.enable = true;
       nvim-colorizer.enable = true;
       rainbow-delimiters.enable = true;
-      rust-tools.enable = true;
+      rustaceanvim.enable = true;
       spider.enable = true;
       todo-comments.enable = true;
       hardtime = {
