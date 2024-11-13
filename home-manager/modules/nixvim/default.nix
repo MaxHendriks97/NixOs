@@ -4,7 +4,6 @@
     ./alpha.nix
   ];
   home.packages = [
-    pkgs.nodePackages.eslint_d
     pkgs.nodePackages.jsonlint
     pkgs.yamllint
     pkgs.nodePackages.markdownlint-cli
@@ -118,9 +117,6 @@
         enable = true;
         lintersByFt = {
           python = [ "flake8" ];
-          javascript = [ "eslint_d" ];
-          typescript = [ "eslint_d" ];
-          typescriptreact = [ "eslint_d" ];
           json = [ "jsonlint" ];
           yaml = [ "yamllint" ];
           markdown = [ "markdownlint" ];
@@ -182,6 +178,7 @@
             enable = true;
             package = pkgs.intelephense;
           };
+          eslint.enable = true;
         };
       };
       nix.enable = true;
