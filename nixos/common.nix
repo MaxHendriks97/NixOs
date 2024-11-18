@@ -63,6 +63,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   # select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -265,6 +266,9 @@
     # Windows emulation
     pkgs.wine
     pkgs.bottles
+
+    pkgs.networkmanagerapplet
+    pkgs.networkmanager-openvpn
   ];
 
   programs.dconf.enable = true;
