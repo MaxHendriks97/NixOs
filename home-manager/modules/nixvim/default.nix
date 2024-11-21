@@ -9,6 +9,7 @@
     pkgs.nodePackages.markdownlint-cli
     pkgs.shellcheck
     pkgs.prettierd
+    pkgs.nodePackages.prettier
   ];
   programs.nixvim = {
     enable = true;
