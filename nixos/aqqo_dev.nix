@@ -18,32 +18,25 @@
     ];
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = let 
+    myphp = pkgs.php82.buildEnv {
+      extensions = {enabled, all}:
+        enabled ++ [
+          all.curl
+          all.intl
+          all.mbstring
+          all.mysqli
+          all.opcache
+          all.xml
+          all.zip
+          all.ssh2
+        ];
+      extraConfig = "memory_limit = 5G";
+    };
+  in [
     # Aqqo Dev tools
-    (pkgs.php82.withExtensions({enabled, all}:
-      enabled ++ [
-        all.curl
-        all.intl
-        all.mbstring
-        all.mysqli
-        all.opcache
-        all.xml
-        all.zip
-        all.ssh2
-      ]
-    ))
-    (pkgs.php82.withExtensions({enabled, all}:
-      enabled ++ [
-        all.curl
-        all.intl
-        all.mbstring
-        all.mysqli
-        all.opcache
-        all.xml
-        all.zip
-        all.ssh2
-      ]
-    )).packages.composer
+    myphp
+    myphp.packages.composer
     pkgs.yarn
     pkgs.flyway
     pkgs.mysql-workbench
