@@ -91,29 +91,6 @@
         };
       };
       treesitter-refactor.enable = true;
-      lspkind = {
-        enable = true;
-        cmp = {
-          enable = true;
-          menu = {
-            nvim_lsp = "[LSP]";
-            treesitter = "[TS]";
-            nvim_lua = "[LUA]";
-            buffer = "[BUF]";
-            path = "[PATH]";
-          };
-        };
-      };
-      none-ls = {
-        enable = true;
-        sources = {
-          diagnostics = {
-            phpstan = {
-              enable = true;
-            };
-          };
-        };
-      };
       lint = {
         enable = true;
         lintersByFt = {
@@ -180,6 +157,37 @@
             package = pkgs.intelephense;
           };
           eslint.enable = true;
+        };
+      };
+      none-ls = {
+        enable = true;
+        sources = {
+          diagnostics = {
+            phpstan = {
+              enable = true;
+            };
+          };
+        };
+      };
+      lsp-format = {
+        enable = true;
+        lspServersToEnable = [
+          "nixd"
+          "ts_ls"
+          "eslint"
+        ];
+      };
+      lspkind = {
+        enable = true;
+        cmp = {
+          enable = true;
+          menu = {
+            nvim_lsp = "[LSP]";
+            treesitter = "[TS]";
+            nvim_lua = "[LUA]";
+            buffer = "[BUF]";
+            path = "[PATH]";
+          };
         };
       };
       nix.enable = true;
