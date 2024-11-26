@@ -1,6 +1,6 @@
-{ config, lib, pkgs, ... }: {
+{ ... }: {
   programs.nixvim.plugins.alpha = {
-    enable = false;
+    enable = true;
     layout = [
       {
         type = "padding";
