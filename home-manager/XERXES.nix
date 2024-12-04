@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./common.nix
   ];
@@ -31,5 +39,6 @@
     pkgs.postman
     pkgs.lastpass-cli
     pkgs.teams-for-linux
+    pkgs.figma-linux
   ];
 }
