@@ -59,6 +59,7 @@
       pkgs.openvpn
       pkgs.lastpass-cli
       pkgs.go-2fa
+      pkgs.kooha
     ];
 
   programs.thunderbird = {
