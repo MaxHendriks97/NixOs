@@ -58,6 +58,7 @@
       pkgs.onedrivegui
       pkgs.openvpn
       pkgs.lastpass-cli
+      pkgs.go-2fa
     ];
 
   programs.thunderbird = {
