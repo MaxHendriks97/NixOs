@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -155,7 +163,7 @@
 
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  
+
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -176,20 +184,22 @@
   };
 
   fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      noto-fonts-extra
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
-      nerdfonts
-      font-awesome
-    ];
+    packages =
+      with pkgs;
+      [
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-emoji
+        noto-fonts-extra
+        liberation_ttf
+        fira-code
+        fira-code-symbols
+        mplus-outline-fonts.githubRelease
+        dina-font
+        proggyfonts
+        font-awesome
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
     fontconfig = {
       defaultFonts = {
@@ -205,10 +215,19 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "networkmanager" "wheel" "docker" "input" "audio" "render" "storage" "plugdev" "adbusers" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "input"
+        "audio"
+        "render"
+        "storage"
+        "plugdev"
+        "adbusers"
+      ];
     };
   };
-
 
   qt = {
     style = "adwaita";
@@ -236,7 +255,7 @@
     pkgs.nixfmt-rfc-style
     pkgs.docker-compose
     pkgs.unzip
-    (pkgs.python3.withPackages(ps: with ps; [ pip ]))
+    (pkgs.python3.withPackages (ps: with ps; [ pip ]))
     pkgs.libxml2
 
     # Ranger
