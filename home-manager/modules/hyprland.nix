@@ -1,4 +1,11 @@
-{ outputs, config, lib, pkgs, ... }: {
+{
+  outputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   options = {
     hyprlandLayout = lib.mkOption {
       default = "master";
@@ -15,7 +22,7 @@
     };
 
     hyprlandWorkspace = lib.mkOption {
-      default = [];
+      default = [ ];
       description = ''
         hyprland workspace options
       '';
@@ -102,7 +109,8 @@
           gaps_in = 5;
           gaps_out = 20;
           border_size = 2;
-          "col.active_border" = "rgb(${config.colorScheme.palette.base0D}) rgb(${config.colorScheme.palette.base0B}) 45deg";
+          "col.active_border" =
+            "rgb(${config.colorScheme.palette.base0D}) rgb(${config.colorScheme.palette.base0B}) 45deg";
           "col.inactive_border" = "rgb(${config.colorScheme.palette.base04})";
 
           layout = config.hyprlandLayout;
@@ -141,32 +149,30 @@
         };
 
         dwindle = {
-            # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-            pseudotile = "yes"; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-            preserve_split = "yes"; # you probably want this
-            force_split= 2;
+          # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+          pseudotile = "yes"; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+          preserve_split = "yes"; # you probably want this
+          force_split = 2;
         };
 
         master = {
-            # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-            new_status = "slave";
-            always_center_master = true;
-            orientation = "center";
+          # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+          new_status = "slave";
+          orientation = "center";
         };
 
         gestures = {
-            # See https://wiki.hyprland.org/Configuring/Variables/ for more
-            workspace_swipe = "off";
+          # See https://wiki.hyprland.org/Configuring/Variables/ for more
+          workspace_swipe = "off";
         };
 
         xwayland = {
-            force_zero_scaling = true;
+          force_zero_scaling = true;
         };
 
         misc = {
           disable_hyprland_logo = true;
         };
-
 
         #################################################################################################
         #██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗    ██████╗ ██╗   ██╗██╗     ███████╗███████╗#
@@ -195,7 +201,6 @@
         #██║  ██╗███████╗   ██║   ██████╔╝██║██║ ╚████║██████╔╝███████║#
         #╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝#
         ################################################################
-
 
         # See https://wiki.hyprland.org/Configuring/Keywords/ for more
         "$mainMod" = "SUPER";

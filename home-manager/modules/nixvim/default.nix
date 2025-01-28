@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./keymaps.nix
     ./alpha.nix
@@ -150,8 +156,10 @@
         enable = true;
         cmd = [
           "${pkgs.jdt-language-server}/bin/jdtls"
-          "-data" "/home/maxh/.cache/jdtls/workspace"
-          "-configuration" "/home/maxh/.cache/jdtls/config"
+          "-data"
+          "/home/maxh/.cache/jdtls/workspace"
+          "-configuration"
+          "/home/maxh/.cache/jdtls/config"
         ];
       };
       project-nvim = {
@@ -161,7 +169,7 @@
       telescope = {
         enable = true;
         settings.defaults = {
-          path_display = ["smart"];
+          path_display = [ "smart" ];
         };
         extensions = {
           fzf-native.enable = true;
@@ -201,20 +209,20 @@
         enable = true;
         mockDevIcons = true;
         modules = {
-          ai = {};
-          basics = {};
-          bufremove = {};
-          cursorword = {};
-          indentscope = {};
-          pairs = {};
-          trailspace = {};
+          ai = { };
+          basics = { };
+          bufremove = { };
+          cursorword = { };
+          indentscope = { };
+          pairs = { };
+          trailspace = { };
           files = {
             mappings = {
               go_in = "<Right>";
               go_out = "<Left>";
             };
           };
-          icons = {};
+          icons = { };
         };
       };
       trouble = {
@@ -222,7 +230,7 @@
       };
       ts-autotag.enable = true;
       noice = {
-          enable = true;
+        enable = true;
       };
       notify.enable = true;
       nvim-colorizer.enable = true;
@@ -233,25 +241,16 @@
       hardtime = {
         enable = false;
         settings.disabledKeys = {
-          "<Up>" = [];
-          "<Down>" = [];
-          "<Left>" = [];
-          "<Right>" = [];
+          "<Up>" = [ ];
+          "<Down>" = [ ];
+          "<Left>" = [ ];
+          "<Right>" = [ ];
         };
       };
     };
     extraPlugins = [
       pkgs.vimPlugins.dressing-nvim
       pkgs.vimPlugins.zen-mode-nvim
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "chuck-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "gacallea";
-          repo = "chuck-nvim";
-          rev = "master";
-          hash = "sha256-cpJAVwxIPqruqbdOqsiDlZep4YKIYDY64wHPeT6szdw=";
-        };
-      })
     ];
   };
 }

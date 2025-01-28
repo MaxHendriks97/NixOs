@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./common.nix
   ];
@@ -8,13 +16,9 @@
   };
 
   home.packages = [
-    pkgs.chuck
-    pkgs.audacity
-    pkgs.miniaudicle
     pkgs.protontricks
     pkgs.yabause
     pkgs.sidequest
-    pkgs.mgba
     pkgs.megasync
   ];
 }
