@@ -60,6 +60,8 @@
       pkgs.lastpass-cli
       pkgs.go-2fa
       pkgs.kooha
+      pkgs.nodejs
+      pkgs.swc
     ];
 
   programs.thunderbird = {

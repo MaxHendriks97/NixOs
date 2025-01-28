@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -155,7 +163,7 @@
 
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  
+
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -205,10 +213,19 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "networkmanager" "wheel" "docker" "input" "audio" "render" "storage" "plugdev" "adbusers" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "input"
+        "audio"
+        "render"
+        "storage"
+        "plugdev"
+        "adbusers"
+      ];
     };
   };
-
 
   qt = {
     style = "adwaita";
@@ -232,11 +249,10 @@
     pkgs.cmake
     pkgs.jdk11
     pkgs.jdk17
-    pkgs.nodejs
     pkgs.nixfmt-rfc-style
     pkgs.docker-compose
     pkgs.unzip
-    (pkgs.python3.withPackages(ps: with ps; [ pip ]))
+    (pkgs.python3.withPackages (ps: with ps; [ pip ]))
     pkgs.libxml2
 
     # Ranger

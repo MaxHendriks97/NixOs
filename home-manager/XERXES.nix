@@ -20,6 +20,8 @@
     "eDP-1, preferred, 960x1080, 1"
     "DP-4, preferred, 0x0, 1"
     "DP-1, preferred, 1920x0, 1"
+    #"eDP-1, preferred, 760x1440, 1"
+    #"desc:CMT GM34-CWQ CMI231300130, 3440x1440@144, 0x0, 1"
     "Unknown-1, disable"
   ];
   hyprlandWorkspace = [
