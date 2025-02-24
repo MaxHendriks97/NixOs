@@ -53,7 +53,6 @@
     { key = "<leader>pf"; action = "<CMD>Telescope live_grep<CR>"; options.desc = "Find string in project"; }
     #{ key = "<leader>c"; options.desc = "Code"; }
     { key = "<leader>cd"; action = "<CMD>Trouble diagnostics toggle focus=false filter.buf=0<CR>"; options.desc = "Diagnostics"; }
-    { key = "s"; action = "<CMD>lua require('flash').jump()<CR>"; }
     { key = "S"; action = "<CMD>lua require('flash').jump()<CR>"; }
     { key = "<leader>m+"; action = "<CMD>! chuck + %<CR>"; }
     { key = "<leader>m-"; action = "<CMD>! chuck --<CR>"; }

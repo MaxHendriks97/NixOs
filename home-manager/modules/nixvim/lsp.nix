@@ -30,7 +30,7 @@
       };
     };
     lsp-format = {
-      enable = true;
+      enable = false;
       lspServersToEnable = [
         "nixd"
         "ts_ls"
