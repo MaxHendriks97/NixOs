@@ -252,7 +252,6 @@
     pkgs.cmake
     pkgs.jdk11
     pkgs.jdk17
-    pkgs.nodejs
     pkgs.nixfmt-rfc-style
     pkgs.docker-compose
     pkgs.unzip

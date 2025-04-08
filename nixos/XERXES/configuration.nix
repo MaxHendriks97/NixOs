@@ -1,7 +1,16 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
-{ inputs, outputs, lib, config, pkgs, nixpkgs-openvpn, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  nixpkgs-openvpn,
+  ...
+}:
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -32,10 +41,10 @@
     "i915.enable_psr=0"
   ];
 
-  hardware.ipu6 = {
-    enable = true;
-    platform = "ipu6epmtl";
-  };
+  #hardware.ipu6 = {
+  #  enable = true;
+  #  platform = "ipu6epmtl";
+  #};
 
   networking.hostName = "XERXES";
 }

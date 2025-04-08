@@ -216,6 +216,8 @@
           indentscope = { };
           pairs = { };
           trailspace = { };
+          operators = { };
+          surround = { };
           files = {
             mappings = {
               go_in = "<Right>";
