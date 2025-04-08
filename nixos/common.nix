@@ -225,6 +225,7 @@
         "storage"
         "plugdev"
         "adbusers"
+        "dialout"
       ];
     };
   };

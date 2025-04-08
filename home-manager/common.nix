@@ -1,7 +1,16 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  nix-colors,
+  ...
+}:
+{
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -160,7 +169,11 @@
       enableCompletion = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "docker" "docker-compose" "npm" ];
+        plugins = [
+          "docker"
+          "docker-compose"
+          "npm"
+        ];
         theme = "";
       };
       plugins = with pkgs; [
@@ -199,6 +212,8 @@
     pkgs.gimp
     pkgs.libreoffice
     pkgs.xorg.xrdb
+    pkgs.signal-desktop
+    inputs.zen-browser.packages.x86_64-linux.default
   ];
 
   # Nicely reload system units when changing configs

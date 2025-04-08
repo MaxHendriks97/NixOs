@@ -11,9 +11,18 @@
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     nixgl.url = "github:guibou/nixGL";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-colors, hyprland, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-colors,
+      hyprland,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -24,18 +33,24 @@
         "x86_64-darwin"
       ];
     in
-     {
+    {
       # Your custom packages
       # Acessible through 'nix build', 'nix shell', etc
-      packages = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs; }
+      packages = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        import ./pkgs { inherit pkgs; }
       );
       # Devshell for bootstrapping
       # Acessible through 'nix develop' or 'nix-shell' (legacy)
-      devShells = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./shell.nix { inherit pkgs; }
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        import ./shell.nix { inherit pkgs; }
       );
 
       # Your custom packages and modifications, exported as overlays
@@ -58,24 +73,24 @@
           ];
         };
         MPU = nixpkgs.lib.nixosSystem {
-              specialArgs = { inherit inputs outputs; };
-              modules = [
-                # > Our main nixos configuration file <
-                ./nixos/MPU/configuration.nix
-              ];
-            };
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/MPU/configuration.nix
+          ];
+        };
         Matrix = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-                # > Our main nixos configuration file <
-                ./nixos/Matrix/configuration.nix
+            # > Our main nixos configuration file <
+            ./nixos/Matrix/configuration.nix
           ];
         };
         XERXES = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-                # > Our main nixos configuration file <
-                ./nixos/XERXES/configuration.nix
+            # > Our main nixos configuration file <
+            ./nixos/XERXES/configuration.nix
           ];
         };
       };
@@ -85,7 +100,10 @@
       homeConfigurations = {
         "maxh@D-135" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit nix-colors;
+          };
           modules = [
             hyprland.homeManagerModules.default
 
@@ -94,33 +112,29 @@
           ];
         };
         "maxh@MPU" = home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-              extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
-              modules = [
-                hyprland.homeManagerModules.default
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit nix-colors;
+          };
+          modules = [
+            hyprland.homeManagerModules.default
 
-                # > Our main home-manager configuration file <
-                ./home-manager/MPU.nix
-              ];
-            };
-        "maxh@Matrix" = home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-              extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
-              modules = [
-                hyprland.homeManagerModules.default
-
-                # > Our main home-manager configuration file <
-                ./home-manager/Matrix.nix
+            # > Our main home-manager configuration file <
+            ./home-manager/MPU.nix
           ];
         };
-	"maxh@XERXES" = home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-              extraSpecialArgs = { inherit inputs outputs; inherit nix-colors; };
-              modules = [
-                hyprland.homeManagerModules.default
+        "maxh@XERXES" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit nix-colors;
+          };
+          modules = [
+            hyprland.homeManagerModules.default
 
-                # > Our main home-manager configuration file <
-                ./home-manager/XERXES.nix
+            # > Our main home-manager configuration file <
+            ./home-manager/XERXES.nix
           ];
         };
       };
