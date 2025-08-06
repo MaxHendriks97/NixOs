@@ -9,6 +9,8 @@
 {
   imports = [
     ./common.nix
+    ./common_gui.nix
+    ./common_linux.nix
   ];
 
   programs.git = {

@@ -71,14 +71,6 @@
           group = "+";
         };
       };
-      copilot-lua = {
-        enable = true;
-        suggestion = {
-          enabled = true;
-          autoTrigger = true;
-          keymap.accept = "<Right>";
-        };
-      };
       treesitter = {
         enable = true;
         settings = {

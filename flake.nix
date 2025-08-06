@@ -3,7 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    stable.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim";
@@ -21,6 +22,7 @@
       home-manager,
       nix-colors,
       hyprland,
+      nixos-wsl,
       ...
     }@inputs:
     let
@@ -93,6 +95,18 @@
             ./nixos/XERXES/configuration.nix
           ];
         };
+	SHODAN = nixpkgs.lib.nixosSystem {
+	  specialArgs = { inherit inputs outputs; };
+	  modules = [
+	    nixos-wsl.nixosModules.default
+	    {
+	      wsl.enable = true;
+	      wsl.defaultUser = "maxh";
+	      system.stateVersion = "24.11";
+	    }
+	    ./nixos/SHODAN/configuration.nix
+	  ];
+	};
       };
 
       # Standalone home-manager configuration entrypoint
@@ -137,6 +151,22 @@
             ./home-manager/XERXES.nix
           ];
         };
+	"maxh@SHODAN" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit nix-colors;
+          };
+          modules = [
+            hyprland.homeManagerModules.default
+	    {
+	      home.stateVersion = "24.11";
+	    }
+
+            # > Our main home-manager configuration file <
+            ./home-manager/SHODAN.nix
+          ];
+	};
       };
     };
 }

@@ -12,10 +12,6 @@
       servers = {
         nixd.enable = true;
         ts_ls.enable = true;
-        intelephense = {
-          enable = true;
-          package = pkgs.intelephense;
-        };
         eslint.enable = true;
       };
     };

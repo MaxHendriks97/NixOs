@@ -22,7 +22,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./modules
+    ./modules/nixvim
   ];
 
   colorScheme = {
@@ -71,50 +71,12 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [
-        "freeimage-unstable-2021-11-01"
-        "nix-2.16.2"
-      ];
     };
   };
 
   home = {
     username = "maxh";
     homeDirectory = "/home/maxh";
-  };
-
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
-
-  gtk = {
-    enable = true;
-    font.name = "Iosevka";
-    theme = {
-      name = "Catppuccin-Mocha-Compact-Green-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "green" ];
-        size = "compact";
-        tweaks = [ "rimless" ];
-        variant = "mocha";
-      };
-    };
-    iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
-    };
-    cursorTheme = {
-      name = "phinger-cursors-dark";
-      package = pkgs.phinger-cursors;
-    };
-
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
   };
 
   home.pointerCursor = {
@@ -125,43 +87,17 @@
   };
 
   home.sessionVariables = {
-    BROWSER = "firefox";
-    TERMINAL = "kitty";
     EDITOR = "nvim";
-    VISUAL = "neovide";
     SHELL = "zsh";
-    QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    MOZ_ENABLE_WAYLAND = "1";
     _JAVA_AWT_WM_NONREPARENTING = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    CLUTTER_BACKEND = "wayland";
-    #XDG_SESSION_TYPE = "wayland";
-    #XDG_CURRENT_DESKTOP = "Hyprland";
-    #XDG_SESSION_DESKTOP = "Hyprland";
-    #GTK_USE_PORTAL = "1";
-    #NIXOS_XDG_OPEN_USE_PORTAL = "1";
-    #XDG_CACHE_HOME = "\${HOME}/.cache";
-    #XDG_CONFIG_HOME = "\${HOME}/.config";
-    #XDG_BIN_HOME = "\${HOME}/.local/bin";
-    #XDG_DATA_HOME = "\${HOME}/.local/share";
     FLAKE = "/home/maxh/NixOs";
   };
 
-  # Enable home-manager and git
   programs = {
     home-manager.enable = true;
     git = {
       enable = true;
-      ignores = [
-        "*.phpactor.json"
-        "DevUtils.php"
-      ];
-      userName = "Max Hendriks";
     };
-    lazygit.enable = true;
     zsh = {
       enable = true;
       autosuggestion.enable = true;
@@ -193,32 +129,5 @@
         neofetch
       ";
     };
-    kitty = {
-      enable = true;
-      settings = {
-        background = "#${config.colorScheme.palette.base00}";
-        foreground = "#${config.colorScheme.palette.base05}";
-        background_opacity = "0.8";
-      };
-    };
   };
-
-  home.packages = [
-    pkgs.beekeeper-studio
-    pkgs.nixd
-    pkgs.neovide
-    pkgs.rustc
-    pkgs.cargo
-    pkgs.gimp
-    pkgs.libreoffice
-    pkgs.xorg.xrdb
-    pkgs.signal-desktop
-    inputs.zen-browser.packages.x86_64-linux.default
-  ];
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
 }

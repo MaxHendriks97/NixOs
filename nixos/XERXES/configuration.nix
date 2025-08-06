@@ -24,6 +24,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     ../common.nix
+    ../common_linux.nix
+    ../common_gui.nix
     ../aqqo_dev.nix
 
     # Import your generated (nixos-generate-config) hardware configuration

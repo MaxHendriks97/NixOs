@@ -26,6 +26,8 @@
     # ./users.nix
     ../common.nix
     ../douane_dev.nix
+    ../common_linux.nix
+    ../common_gui.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
