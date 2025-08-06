@@ -151,22 +151,22 @@
             ./home-manager/XERXES.nix
           ];
         };
-	"maxh@SHODAN" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            inherit nix-colors;
-          };
-          modules = [
-            hyprland.homeManagerModules.default
-	    {
-	      home.stateVersion = "24.11";
-	    }
+        "maxh@SHODAN" = home-manager.lib.homeManagerConfiguration {
+              pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+              extraSpecialArgs = {
+                inherit inputs outputs;
+                inherit nix-colors;
+              };
+              modules = [
+                hyprland.homeManagerModules.default
+            {
+              home.stateVersion = "24.11";
+            }
 
-            # > Our main home-manager configuration file <
-            ./home-manager/SHODAN.nix
-          ];
-	};
+                # > Our main home-manager configuration file <
+                ./home-manager/SHODAN.nix
+              ];
+        };
       };
     };
 }
