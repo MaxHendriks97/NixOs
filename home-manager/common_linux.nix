@@ -25,6 +25,15 @@
     pkgs.cargo
   ];
 
+  programs = {
+    zsh = {
+      initExtra = "
+        export PATH=$PATH:$HOME/bin/
+        neofetch
+      ";
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 }

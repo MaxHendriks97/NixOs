@@ -124,10 +124,6 @@
           file = "pure.zsh";
         }
       ];
-      initExtra = "
-        export PATH=$PATH:$HOME/bin/
-        neofetch
-      ";
     };
   };
 }
